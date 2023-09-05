@@ -138,7 +138,7 @@ body {
 .openbtn {
     font-size: 20px;
     cursor: pointer;
-    background-color: #111;
+    background-color: #ae4646;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -155,7 +155,7 @@ body {
   }
 
 .openbtn:hover {
-    background-color: #444;
+    background-color: #181d3b;
 }
 
 
@@ -274,4 +274,16 @@ footer a {
     columns: 2;
     -webkit-columns: 2;
     -moz-columns: 2;
+}
+
+.btn-class {
+    background-color: #ae4646;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+}
+
+.btn-class:hover {
+    background-color: #181d3b;
 }
