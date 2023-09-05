@@ -287,3 +287,13 @@ footer a {
 .btn-class:hover {
     background-color: #181d3b;
 }
+
+label {
+    display: inline-block;
+    width: 150px;
+    /* text-align: right; */
+}
+
+div .labels{
+    margin-bottom: 10px;
+}
