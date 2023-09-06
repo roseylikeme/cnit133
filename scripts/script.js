@@ -15,10 +15,18 @@ $(function () {
   $('.hwParts').hide();
   $('.overview').show();
 
+  function clearInputsAndError() {
+    $('#num1').val('');
+    $('#num2').val('');
+    $('#num3').val('');
+    $('#results').hide();
+    $('.btn-class').removeClass('activeSubMenuButton');
+  }
+
   $('.btn-class').click(function () {
       // Hide all sections
       $('.hwParts').hide();
-      $('.btn-class').removeClass('activeSubMenuButton');
+      clearInputsAndError()
       
       // Show the selected section
       $('#' + $(this).attr('data-target')).show();
@@ -46,20 +54,35 @@ $(function () {
     if (num1 == '' || num2 == '' || num3 == '') {
       $('#results').html(`
         <p class="error">Please enter in all fields!</p>
-      `);
+      `).fadeTo("slow", 0.7)
     } else {
       $('#results').html(`
-        <p>The sum of the numbers is: ${sum}</p>
-        <p>The average of the numbers is: ${average}</p>
-        <p>The product of the numbers is: ${product}</p>
-        <p>The largest of the numbers is: ${largest}</p>
-        <p>The smallest of the numbers is: ${smallest}</p>
-      `);
+        <div class="container d-flex justify-content-between">
+          <p>The sum of the numbers is:</p>
+          <p>${sum}</p>
+        </div>
+        <div class="container d-flex justify-content-between">
+          <p>The average of the numbers is:</p>
+          <p>${average}</p>
+        </div>
+        <div class="container d-flex justify-content-between">
+          <p>The product of the numbers is:</p>
+          <p>${product}</p>
+        </div>
+        <div class="container d-flex justify-content-between">
+          <p>The largest of the numbers is:</p>
+          <p>${largest}</p>
+        </div>
+        <div class="container d-flex justify-content-between">
+          <p>The smallest of the numbers is:</p>
+          <p>${smallest}</p>
+        </div>
+      `).fadeTo("slow", 0.7);
     }
 
     $('#results').show();
     // Clear the fields after the clear button is clicked
-    $('#clearBtn').click(function (){
+    $('#clearBtn').click(function clear(){
       $('#num1').val('');
       $('#num2').val('');
       $('#num3').val('');
