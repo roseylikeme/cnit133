@@ -316,6 +316,7 @@ div .labels{
     border: 2px solid #ae4646;
     border-radius: 10px;
     background-color: #fff;
+    font-weight: 500;
 }
 
 div.results p {
