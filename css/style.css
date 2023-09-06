@@ -276,6 +276,7 @@ footer a {
     -moz-columns: 2;
 }
 
+.btn-class-only,
 .btn-class {
     background-color: #ae4646;
     padding: 10px;
@@ -284,8 +285,16 @@ footer a {
     border: none;
 }
 
+.btn-class-only:hover,
 .btn-class:hover {
     background-color: #181d3b;
+}
+
+.activeSubMenuButton {
+    background-color: #fff;
+    font-weight: 600;
+    color: #ae4646;
+    border: 3px solid #ae4646;
 }
 
 label {
@@ -296,4 +305,19 @@ label {
 
 div .labels{
     margin-bottom: 10px;
+}
+
+.results {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    border: 2px solid #ae4646;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+div.results p {
+    margin-bottom: 0;
 }

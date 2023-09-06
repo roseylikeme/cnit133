@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Homework 2 for JavaScript, jQuery, AJAX course at CCSF">
+    <meta name="overview" content="Homework 2 for JavaScript, jQuery, AJAX course at CCSF">
     <!-- Styles -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,21 +80,20 @@
                     <div class="toc-list-wrapper">
                         <div class="toc-list">
                             <div class="container justify-content-evenly d-flex">
-                                <button id="descriptionBtn" class="btn-class" data-target="description">Description</button>
+                                <button class="btn-class" data-target="overview">Overview</button>
                                 <button class="btn-class" data-target="pt1">Part 1</button>
                                 <button class="btn-class" data-target="pt2">Part 2</button>
                                 <button class="btn-class" data-target="pt3">Extra Credit</button>
                             </div>
-                            <!-- TODO: RENAME overview to description -->
-                            <div id="description" class="description hwParts">
-                                <h5 class="header text-center">Description</h5>
+                            <div id="overview" class="overview hwParts">
+                                <h5 class="header text-center">Overview</h5>
                                 <ul>
                                     <li>Part 1 - document.write()</li>
                                     <li>Part 2 - Inputs and Outputs</li>
                                     <li>Part 3 - Exchange Rates (Extra Credit)</li>
                                 </ul>
                             </div>
-                            <div class="hwPart1 hwParts" id="pt1">
+                            <div id="pt1" class="hwParts">
                                 <h5 class="header text-center">Description</h5>
                                 <p class="text-center">Use a script to display content with document.write()</p>
                                 <h5 class="header text-center">Part 1</h5>
@@ -106,27 +105,34 @@
                                     </script>
                                 </div>
                             </div>
-                            <div class="hwPart2 hwParts" id="pt2">
+                            <div id="pt2" class="hwParts">
                                 <h5 class="header text-center">Description</h5>
                                 <p class="text-center">Calculating the sum, avg, and product of three integers</p>
                                 <h5 class="header text-center">Part 2</h5>
                                 <div class="container text-center">
                                     <div class="labels">
                                         <label>First Number:</label>
-                                        <input type="number" />
+                                        <input id="num1" type="number" />
                                     </div>
                                     <div class="labels">
                                         <label>Second Number:</label>
-                                        <input type="number" />
+                                        <input id="num2" type="number" />
                                     </div>
                                     <div class="labels">
                                         <label>Third Number:</label>
-                                        <input type="number" />
+                                        <input id="num3" type="number" />
                                     </div>
                                     <!-- TODO: Add a button that clears the form and processes the data typed by user -->
+                                    <div class="container">
+                                        <button id="calculateBtn" class="btn-class-only">Calculate</button>
+                                        <button id="clearBtn" class="btn-class-only">Clear</button>
+                                    </div>
+                                    <div id="results" class="container results">
+                                        
+                                    </div>
                                 </div>
                             </div>
-                            <div class="hwPart3 hwParts" id="pt3">
+                            <div id="pt3" class="hwParts">
                                 <h5 class="header text-center">Extra Credit</h5>
                             </div>
                             
