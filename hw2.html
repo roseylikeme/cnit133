@@ -133,13 +133,16 @@
                                 </div>
                             </div>
                             <div id="pt3" class="hwParts">
-                                <h5 class="header text-center">Description</h5>
-                                <p class="text-center">Tables and exchange rates</p>
-                                <div class="container d-flex justify-content-center">
-                                    <button class="btn-class-only" id="pt2ExtraCreditInfoBtn">Click to show/hide instructions</button>
-                                </div>
+                                <!-- <h5 class="header text-center">Description</h5>
+                                <p class="text-center">Tables and exchange rates</p> -->
                                 <h5 class="header text-center">Extra Credit</h5>
-                                <div class="container d-flex justify-content-center">
+                                <div class="container d-flex justify-content-center flex-column">
+                                    <button class="btn-class-only" id="pt3ExtraCreditInfoBtn">Click to show/hide instructions</button>
+                                    <div class="container pt3ExtraCreditInfo">
+                                        <p>Below shows the foreign exchange rates in June 2021. Enter a dollar amount in the table below to see the corresponding foreign exchange values</p>
+                                    </div>
+                                </div>
+                                <div class="container d-flex justify-content-center flex-column">
                                     <table class="styled-table">
                                         <thead>
                                             <tr>
@@ -154,28 +157,28 @@
                                             </tr>
                                             <tr>
                                                 <td>Euro</td>
-                                                <td>0.84</td>
-                                                <td></td>
+                                                <td id="euroRate">0.84</td>
+                                                <td id="euroValue"></td>
                                             </tr>
                                             <tr>
                                                 <td>Candadian Dollar</td>
-                                                <td>1.23</td>
-                                                <td></td>
+                                                <td id="canadianRate">1.23</td>
+                                                <td id="canadianValue"></td>
                                             </tr>
                                             <tr>
                                                 <td>Hong Kong Dollar</td>
-                                                <td>7.76</td>
-                                                <td></td>
+                                                <td id="hkRate">7.76</td>
+                                                <td id="hkValue"></td>
                                             </tr>
                                             <tr>
                                                 <td>Japanese Yen</td>
-                                                <td>110.80</td>
-                                                <td></td>
+                                                <td id="yenRate">110.80</td>
+                                                <td id="yenValue"></td>
                                             </tr>
                                             <tr>
                                                 <td>Mexican Peso</td>
-                                                <td>19.82</td>
-                                                <td></td>
+                                                <td id="mexicanRate">19.82</td>
+                                                <td id="mexicanValue"></td>
                                             </tr>
                                             <tr>
                                                 <td colspan="2" class="fw-bold">Enter Amount of U.S Dollars</td>
@@ -183,6 +186,8 @@
                                             </tr>
                                         </tbody>
                                     </table>
+                                    <button class="btn-class-only" id="calculateExchangeRateBtn">Calculate</button>
+                                    <div id="extraCreditError"></div>
                                 </div>
                             </div>
                             

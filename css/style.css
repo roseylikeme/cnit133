@@ -307,6 +307,7 @@ div .labels{
     margin-bottom: 10px;
 }
 
+.pt3ExtraCreditInfo,
 .results {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -317,6 +318,10 @@ div .labels{
     border-radius: 10px;
     background-color: #fff;
     font-weight: 500;
+}
+
+.container.pt3ExtraCreditInfo {
+    margin-top: 0;
 }
 
 div.results p {

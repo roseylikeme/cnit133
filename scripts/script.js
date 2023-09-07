@@ -1,5 +1,3 @@
-window.addEventListener('load', closeNav);
-
 function openNav() {
   $("#mySidebar").css("width", "200px");
   $("#main").css("margin-left", "200px");
@@ -11,6 +9,8 @@ function closeNav() {
 }
 
 $(function () {
+  // Page loads with sidebar closed
+  closeNav();
   // Script for submenu:
   $('.hwParts').hide();
   $('.overview').show();
@@ -32,10 +32,10 @@ $(function () {
       $('#' + $(this).attr('data-target')).show();
       $(this).addClass('activeSubMenuButton');
   });
-});
 
-// Function that calculates the sum, the average, and the product of the numbers and finds the largest and smallest number
-$(function () {
+  // Begin scripts for pt 2
+  // Function that calculates the sum, the average, and the product of the numbers 
+  // and finds the largest and smallest number
   $('#results').hide()
   $('#calculateBtn').click(function () {
     // Get the numbers from the input fields
@@ -88,7 +88,43 @@ $(function () {
       $('#num3').val('');
       $('#results').hide();
     })
-
-
   });
+
+  // Begin Script for Pt 3 - Extra Credit
+  // Function that calculates the exchange rate given the input in dollars
+  // Grab our rates from table
+  const euroRate = parseFloat($('#euroRate').text());
+  const canadianRate = parseFloat($('#canadianRate').text());
+  const hkRate = parseFloat($('#hkRate').text());
+  const yenRate = parseFloat($('#yenRate').text());
+  const mexicanRate = parseFloat($('#mexicanRate').text());
+  
+  // After the user clicks the calculate button,
+  // display the processed results in their respective table cells under the value column
+  $('#calculateExchangeRateBtn').click(function (){
+    const dollars = parseFloat($('#usdInput').val());
+    if (isNaN(dollars)) {
+      $('#extraCreditError').html(`
+      <p class="error text-center">Enter a number!!</p>
+      `).fadeTo("slow", 0.7).hide(1500)
+    } else {
+      // Process data -- Calculations
+      const euro = (dollars * euroRate).toFixed(2);
+      const canadian = (dollars * canadianRate).toFixed(2);
+      const hk = (dollars * hkRate).toFixed(2);
+      const yen = (dollars * yenRate).toFixed(2);
+      const mexican = (dollars * mexicanRate).toFixed(2);
+      
+      $('#euroValue').text(euro);
+      $('#canadianValue').text(canadian);
+      $('#hkValue').text(hk);
+      $('#yenValue').text(yen);
+      $('#mexicanValue').text(mexican);
+    }
+  })
+
+  // Hide and Show instructions
+  $('#pt3ExtraCreditInfoBtn').click(function() {
+    $('.pt3ExtraCreditInfo').toggle();
+  })
 });
