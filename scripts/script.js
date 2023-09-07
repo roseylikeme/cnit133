@@ -39,19 +39,19 @@ $(function () {
   $('#results').hide()
   $('#calculateBtn').click(function () {
     // Get the numbers from the input fields
-    const num1 = $('#num1').val()
-    const num2 = $('#num2').val()
-    const num3 = $('#num3').val()
+    const num1 = parseFloat($('#num1').val())
+    const num2 = parseFloat($('#num2').val())
+    const num3 = parseFloat($('#num3').val())
 
     // Process data -- Calculations
-    const sum = parseInt(num1) + parseInt(num2) + parseInt(num3);
+    const sum = (num1 + num2 + num3).toFixed(2);
     const average = (sum / 3).toFixed(2);
-    const product = num1 * num2 * num3;
-    const largest = Math.max(num1, num2, num3);
-    const smallest = Math.min(num1, num2, num3);
+    const product = (num1 * num2 * num3).toFixed(2);
+    const largest = Math.max(num1, num2, num3).toFixed(2);
+    const smallest = Math.min(num1, num2, num3).toFixed(2);
 
     // If the user entered in all fields then display the results in results container, otherwise display an error message
-    if (num1 == '' || num2 == '' || num3 == '') {
+    if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
       $('#results').html(`
         <p class="error">Please enter in all fields!</p>
       `).fadeTo("slow", 0.7)
