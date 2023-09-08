@@ -58,23 +58,23 @@ $(function () {
     } else {
       $('#results').html(`
         <div class="container d-flex justify-content-between">
-          <p>The sum of the numbers is:</p>
+          <p>Sum:</p>
           <p>${sum}</p>
         </div>
         <div class="container d-flex justify-content-between">
-          <p>The average of the numbers is:</p>
+          <p>Average:</p>
           <p>${average}</p>
         </div>
         <div class="container d-flex justify-content-between">
-          <p>The product of the numbers is:</p>
+          <p>Product:</p>
           <p>${product}</p>
         </div>
         <div class="container d-flex justify-content-between">
-          <p>The largest of the numbers is:</p>
+          <p>Largest:</p>
           <p>${largest}</p>
         </div>
         <div class="container d-flex justify-content-between">
-          <p>The smallest of the numbers is:</p>
+          <p>Smallest:</p>
           <p>${smallest}</p>
         </div>
       `).fadeTo("slow", 0.7);

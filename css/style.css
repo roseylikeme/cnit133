@@ -39,6 +39,15 @@ body {
     margin-bottom: 2rem;
 }
 
+.toc-wrapper.back {
+    box-shadow: none;
+}
+
+.toc-wrapper.back a {
+    text-decoration: underline;
+    color: #6c60a6;
+}
+
 .toc-header {
     background: #ae4646;
     padding: 30px;

@@ -73,125 +73,130 @@
                         </div>
                     </div>
                 </header>
-                <div class="toc-wrapper">
-                    <div class="toc-header">
-                        <h1 class="toc-heading">H2 - Basic Operations</h1>
-                    </div>
-                    <div class="toc-list-wrapper">
-                        <div class="toc-list">
-                            <div class="container justify-content-evenly d-flex">
-                                <button class="btn-class activeSubMenuButton" data-target="overview">Overview</button>
-                                <button class="btn-class" data-target="pt1">Part 1</button>
-                                <button class="btn-class" data-target="pt2">Part 2</button>
-                                <button class="btn-class" data-target="pt3">Extra Credit</button>
-                            </div>
-                            <div id="overview" class="overview hwParts">
-                                <h5 class="header text-center">Overview</h5>
-                                <ul>
-                                    <li>Part 1 - document.write()</li>
-                                    <li>Part 2 - Inputs and Outputs</li>
-                                    <li>Part 3 - Exchange Rates (Extra Credit)</li>
-                                </ul>
-                            </div>
-                            <div id="pt1" class="hwParts">
-                                <h5 class="header text-center">Description</h5>
-                                <p class="text-center">Use a script to display content with document.write()</p>
-                                <h5 class="header text-center">Part 1</h5>
-                                <div class="container text-center fs-4">
-                                    <script>
-                                        document.write('<strong><span style="font-family: Times New Roman; color: red;">xy</span></strong> ');
-                                        document.write('<span style="font-family: Arial; color: blue;">12</span> ');
-                                        document.write('<span style="font-family: Impact; color: green; font-style: italic;">89</span>');
-                                    </script>
-                                </div>
-                            </div>
-                            <div id="pt2" class="hwParts">
-                                <h5 class="header text-center">Description</h5>
-                                <p class="text-center">Calculating the sum, avg, and product of three integers</p>
-                                <h5 class="header text-center">Part 2</h5>
-                                <div class="container text-center">
-                                    <div class="labels">
-                                        <label>First Number:</label>
-                                        <input id="num1" type="number" />
-                                    </div>
-                                    <div class="labels">
-                                        <label>Second Number:</label>
-                                        <input id="num2" type="number" />
-                                    </div>
-                                    <div class="labels">
-                                        <label>Third Number:</label>
-                                        <input id="num3" type="number" />
-                                    </div>
-                                    <!-- TODO: Add a button that clears the form and processes the data typed by user -->
-                                    <div class="container">
-                                        <button id="calculateBtn" class="btn-class-only">Calculate</button>
-                                        <button id="clearBtn" class="btn-class-only">Clear</button>
-                                    </div>
-                                    <div id="results" class="container results">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="pt3" class="hwParts">
-                                <!-- <h5 class="header text-center">Description</h5>
-                                <p class="text-center">Tables and exchange rates</p> -->
-                                <h5 class="header text-center">Extra Credit</h5>
-                                <div class="container d-flex justify-content-center flex-column">
-                                    <button class="btn-class-only" id="pt3ExtraCreditInfoBtn">Click to show/hide instructions</button>
-                                    <div class="container pt3ExtraCreditInfo">
-                                        <p>Below shows the foreign exchange rates in June 2021. Enter a dollar amount in the table below to see the corresponding foreign exchange values</p>
-                                    </div>
-                                </div>
-                                <div class="container d-flex justify-content-center flex-column">
-                                    <table class="styled-table">
-                                        <thead>
-                                            <tr>
-                                                <th colspan="3" scope="row">Monetary Exchange Rates</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th>Currency</th>
-                                                <th>Rate</th>
-                                                <th>Value</th>
-                                            </tr>
-                                            <tr>
-                                                <td>Euro</td>
-                                                <td id="euroRate">0.84</td>
-                                                <td id="euroValue"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Candadian Dollar</td>
-                                                <td id="canadianRate">1.23</td>
-                                                <td id="canadianValue"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Hong Kong Dollar</td>
-                                                <td id="hkRate">7.76</td>
-                                                <td id="hkValue"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Japanese Yen</td>
-                                                <td id="yenRate">110.80</td>
-                                                <td id="yenValue"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Mexican Peso</td>
-                                                <td id="mexicanRate">19.82</td>
-                                                <td id="mexicanValue"></td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2" class="fw-bold">Enter Amount of U.S Dollars</td>
-                                                <td><input id="usdInput" type="number"/></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <button class="btn-class-only" id="calculateExchangeRateBtn">Calculate</button>
-                                    <div id="extraCreditError"></div>
-                                </div>
-                            </div>
-                            
+                <div class="container d-flex flex-column">
+                    <div class="toc-wrapper">
+                        <div class="toc-header">
+                            <h1 class="toc-heading">H2 - Basic Operations</h1>
                         </div>
+                        <div class="toc-list-wrapper">
+                            <div class="toc-list">
+                                <div class="container justify-content-evenly d-flex">
+                                    <button class="btn-class activeSubMenuButton" data-target="overview">Overview</button>
+                                    <button class="btn-class" data-target="pt1">Part 1</button>
+                                    <button class="btn-class" data-target="pt2">Part 2</button>
+                                    <button class="btn-class" data-target="pt3">Extra Credit</button>
+                                </div>
+                                <div id="overview" class="overview hwParts">
+                                    <h5 class="header text-center">Overview</h5>
+                                    <ul>
+                                        <li>Part 1 - document.write()</li>
+                                        <li>Part 2 - Inputs and Outputs</li>
+                                        <li>Part 3 - Exchange Rates (Extra Credit)</li>
+                                    </ul>
+                                </div>
+                                <div id="pt1" class="hwParts">
+                                    <h5 class="header text-center">Description</h5>
+                                    <p class="text-center">Use a script to display content with document.write()</p>
+                                    <h5 class="header text-center">Part 1</h5>
+                                    <div class="container text-center fs-4">
+                                        <script>
+                                            document.write('<strong><span style="font-family: Times New Roman; color: red;">xy</span></strong> ');
+                                            document.write('<span style="font-family: Arial; color: blue;">12</span> ');
+                                            document.write('<span style="font-family: Impact; color: green; font-style: italic;">89</span>');
+                                        </script>
+                                    </div>
+                                </div>
+                                <div id="pt2" class="hwParts">
+                                    <h5 class="header text-center">Description</h5>
+                                    <p class="text-center">Calculating the sum, avg, and product of three integers</p>
+                                    <h5 class="header text-center">Part 2</h5>
+                                    <div class="container text-center">
+                                        <div class="labels">
+                                            <label>First Number:</label>
+                                            <input id="num1" type="number" />
+                                        </div>
+                                        <div class="labels">
+                                            <label>Second Number:</label>
+                                            <input id="num2" type="number" />
+                                        </div>
+                                        <div class="labels">
+                                            <label>Third Number:</label>
+                                            <input id="num3" type="number" />
+                                        </div>
+                                        <!-- TODO: Add a button that clears the form and processes the data typed by user -->
+                                        <div class="container">
+                                            <button id="calculateBtn" class="btn-class-only">Calculate</button>
+                                            <button id="clearBtn" class="btn-class-only">Clear</button>
+                                        </div>
+                                        <div id="results" class="container results">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="pt3" class="hwParts">
+                                    <!-- <h5 class="header text-center">Description</h5>
+                                    <p class="text-center">Tables and exchange rates</p> -->
+                                    <h5 class="header text-center">Extra Credit</h5>
+                                    <div class="container d-flex justify-content-center flex-column">
+                                        <button class="btn-class-only" id="pt3ExtraCreditInfoBtn">Click to show/hide instructions</button>
+                                        <div class="container pt3ExtraCreditInfo">
+                                            <p>Below shows the foreign exchange rates in June 2021. Enter a dollar amount in the table below to see the corresponding foreign exchange values</p>
+                                        </div>
+                                    </div>
+                                    <div class="container d-flex justify-content-center flex-column">
+                                        <table class="styled-table">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="3" scope="row">Monetary Exchange Rates</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th>Currency</th>
+                                                    <th>Rate</th>
+                                                    <th>Value</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>Euro</td>
+                                                    <td id="euroRate">0.84</td>
+                                                    <td id="euroValue"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Candadian Dollar</td>
+                                                    <td id="canadianRate">1.23</td>
+                                                    <td id="canadianValue"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Hong Kong Dollar</td>
+                                                    <td id="hkRate">7.76</td>
+                                                    <td id="hkValue"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Japanese Yen</td>
+                                                    <td id="yenRate">110.80</td>
+                                                    <td id="yenValue"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Mexican Peso</td>
+                                                    <td id="mexicanRate">19.82</td>
+                                                    <td id="mexicanValue"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" class="fw-bold">Enter Amount of U.S Dollars</td>
+                                                    <td><input id="usdInput" type="number"/></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <button class="btn-class-only" id="calculateExchangeRateBtn">Calculate</button>
+                                        <div id="extraCreditError"></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toc-wrapper back">
+                        <a href="index.html">Back to Home</a>
                     </div>
                 </div>
             </div>
