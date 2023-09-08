@@ -153,7 +153,8 @@ body {
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-  }
+    text-decoration: none;
+}
 
 .openbtn:hover {
     background-color: #181d3b;
@@ -339,25 +340,29 @@ div.results p {
     border-radius: 25px;
 }
 
-/* Apply border-radius to table header */
-.styled-table th {
-    border-radius: 25px 25px 0 0;
-}
-
 .styled-table thead tr {
     background-color: #ae4646;
     color: #ffffff;
     text-align: left;
 }
 
-.styled-table th,
-.styled-table td {
+.styled-table th {
+    border-radius: 25px 25px 0 0;
     padding: 12px 15px;
     text-align: center;
 }
 
+.styled-table td {
+    padding: 12px 15px;
+    text-align: end;
+}
+
 .styled-table tbody tr {
     border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody th {
+    text-align: end;
 }
 
 .styled-table tbody tr:nth-of-type(even) {
@@ -366,4 +371,8 @@ div.results p {
 
 .styled-table tbody tr:last-of-type {
     border-bottom: 2px #763030;
+}
+
+#usdInput {
+    text-align: end;
 }
