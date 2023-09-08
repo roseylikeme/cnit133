@@ -386,6 +386,10 @@ div.results p {
     border-radius: 8px;
 }
 
+.addGap {
+    gap: 5px
+}
+
 /* When screen reaches a width of less than 540px then change the styling of my styled-table */
 @media screen and (max-width: 540px) {
     .styled-table {
@@ -404,3 +408,5 @@ div.results p {
         padding: 5px;
     }
 }
+
+/* TODO: If wanted go make more break points fixes for smaller screen */
