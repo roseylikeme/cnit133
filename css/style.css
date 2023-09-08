@@ -293,7 +293,6 @@ footer a {
 
 .activeSubMenuButton {
     background-color: #fff;
-    font-weight: 600;
     color: #ae4646;
     border: 3px solid #ae4646;
 }
@@ -335,7 +334,7 @@ div.results p {
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
-    min-width: 400px;
+    min-width: 100%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     border-radius: 25px;
 }
@@ -376,4 +375,23 @@ div.results p {
 #usdInput {
     text-align: end;
     border-radius: 8px;
+}
+
+/* When screen reaches a width of less than 540px then change the styling of my styled-table */
+@media screen and (max-width: 540px) {
+    .styled-table {
+        border-radius: 25px;
+    }
+
+    .styled-table thead tr {
+        border-radius: 0;
+    }
+
+    .styled-table thead th {
+        padding: 5px;
+    }
+
+    .styled-table tbody td {
+        padding: 5px;
+    }
 }
