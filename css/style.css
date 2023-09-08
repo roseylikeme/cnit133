@@ -50,7 +50,7 @@ body {
 
 .toc-header {
     background: #ae4646;
-    padding: 30px;
+    /* padding: 30px; */
     border-radius: 50px 50px 0 100px;
     min-height: 100px;
     display: flex;
@@ -309,19 +309,20 @@ footer a {
 label {
     display: inline-block;
     width: 150px;
-    /* text-align: right; */
 }
 
 div .labels{
     margin-bottom: 10px;
 }
 
+container d-flex justify-content-center flex-column mb-3 {
+    width: 600px;
+}
+
 .pt3ExtraCreditInfo,
 .results {
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
     padding: 10px;
     border: 2px solid #ae4646;
     border-radius: 10px;
@@ -341,7 +342,7 @@ div.results p {
 /* Table styling */
 .styled-table {
     border-collapse: collapse;
-    margin: 25px 0;
+    /* margin: 25px 0; */
     font-size: 0.9em;
     min-width: 100%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -361,7 +362,7 @@ div.results p {
 }
 
 .styled-table td {
-    padding: 12px 15px;
+    padding: 12px;
     text-align: end;
 }
 
@@ -378,7 +379,7 @@ div.results p {
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px #763030;
+    border-bottom: 1px;
 }
 
 #usdInput {
@@ -389,24 +390,3 @@ div.results p {
 .addGap {
     gap: 5px
 }
-
-/* When screen reaches a width of less than 540px then change the styling of my styled-table */
-@media screen and (max-width: 540px) {
-    .styled-table {
-        border-radius: 25px;
-    }
-
-    .styled-table thead tr {
-        border-radius: 0;
-    }
-
-    .styled-table thead th {
-        padding: 5px;
-    }
-
-    .styled-table tbody td {
-        padding: 5px;
-    }
-}
-
-/* TODO: If wanted go make more break points fixes for smaller screen */
