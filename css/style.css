@@ -138,10 +138,11 @@ body {
 .openbtn {
     font-size: 20px;
     cursor: pointer;
-    background-color: #111;
+    background-color: #ae4646;
     color: white;
     padding: 10px 15px;
     border: none;
+    border-radius: 10px;
 }
 
 .sidebar .closebtn {
@@ -155,13 +156,12 @@ body {
   }
 
 .openbtn:hover {
-    background-color: #444;
+    background-color: #181d3b;
 }
 
 
 .sidebar {
     height: 100%;
-    
     background: #ae4646;
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
@@ -274,4 +274,96 @@ footer a {
     columns: 2;
     -webkit-columns: 2;
     -moz-columns: 2;
+}
+
+.btn-class-only,
+.btn-class {
+    background-color: #ae4646;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+}
+
+.btn-class-only:hover,
+.btn-class:hover {
+    background-color: #181d3b;
+}
+
+.activeSubMenuButton {
+    background-color: #fff;
+    font-weight: 600;
+    color: #ae4646;
+    border: 3px solid #ae4646;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+    /* text-align: right; */
+}
+
+div .labels{
+    margin-bottom: 10px;
+}
+
+.pt3ExtraCreditInfo,
+.results {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    border: 2px solid #ae4646;
+    border-radius: 10px;
+    background-color: #fff;
+    font-weight: 500;
+}
+
+.container.pt3ExtraCreditInfo {
+    margin-top: 0;
+    padding-bottom: 0;
+}
+
+div.results p {
+    margin-bottom: 0;
+}
+
+/* Table styling */
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+}
+
+/* Apply border-radius to table header */
+.styled-table th {
+    border-radius: 25px 25px 0 0;
+}
+
+.styled-table thead tr {
+    background-color: #ae4646;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px #763030;
 }
