@@ -127,4 +127,9 @@ $(function () {
   $('#pt3ExtraCreditInfoBtn').click(function() {
     $('.pt3ExtraCreditInfo').toggle();
   })
+
+  // when input field is clicked, change color of input field
+  $('#usdInput').click(function() {
+    $(this).css('background-color', 'lightgray');
+  })
 });
