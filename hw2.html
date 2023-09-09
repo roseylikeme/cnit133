@@ -12,11 +12,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="scripts/script.js"></script>
+    <script src="scripts/sharedScript.js"></script>
 </head>
 
 <body>
@@ -81,7 +85,8 @@
                         <div class="toc-list-wrapper">
                             <div class="toc-list">
                                 <div class="container justify-content-center addGap d-flex">
-                                    <button class="btn-class activeSubMenuButton" data-target="overview">Overview</button>
+                                    <button class="btn-class activeSubMenuButton"
+                                        data-target="overview">Overview</button>
                                     <button class="btn-class" data-target="pt1">Part One</button>
                                     <button class="btn-class" data-target="pt2">Part Two</button>
                                     <button class="btn-class" data-target="pt3">Extra Credit</button>
@@ -129,7 +134,7 @@
                                             <button id="clearBtn" class="btn-class-only">Clear</button>
                                         </div>
                                         <div id="results" class="container results">
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -138,9 +143,12 @@
                                     <p class="text-center">Tables and exchange rates</p> -->
                                     <h5 class="header text-center">Extra Credit</h5>
                                     <div class="container d-flex justify-content-center flex-column mb-3 wd400">
-                                        <button class="btn-class-only" id="pt3ExtraCreditInfoBtn">Click to show/hide instructions</button>
+                                        <button class="btn-class-only" id="pt3ExtraCreditInfoBtn">Click to show/hide
+                                            instructions</button>
                                         <div class="container pt3ExtraCreditInfo">
-                                            <p>Below shows the foreign exchange rates in June 2021. Enter a dollar amount in the table below to see the corresponding foreign exchange values</p>
+                                            <p>Below shows the foreign exchange rates in June 2021. Enter a dollar
+                                                amount in the table below to see the corresponding foreign exchange
+                                                values</p>
                                         </div>
                                     </div>
                                     <div class="container d-flex justify-content-center flex-column">
@@ -191,7 +199,7 @@
                                         <div id="extraCreditError"></div>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -204,4 +212,5 @@
         </div>
     </main>
 </body>
+
 </html>
