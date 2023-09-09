@@ -10,10 +10,10 @@ $(function (){
         })
         // Change color
         $('.main-heading').css({color: "red"})
-        
+        // Change color back to initial color after waiting 2 seconds
         setTimeout(function (){
             $('.main-heading').css({color: initialColor})
-        })
+        }, 2000)
 
         $("#my-image").css("border", "5px solid white");
         $("#my-image").animate({ border: "5px solid white" }, "slow");
