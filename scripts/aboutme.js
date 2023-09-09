@@ -9,11 +9,11 @@ $(function (){
             $(this).animate({fontSize: initialFontSize, color: initialColor }, "slow");
         })
         // Change color
-        $('.main-heading').css({color: "red"})
+        $('.main-heading').css('color', '#ae4646')
         // Change color back to initial color after waiting 2 seconds
         setTimeout(function (){
             $('.main-heading').css({color: initialColor})
-        }, 2000)
+        }, 1200)
 
         $("#my-image").css("border", "5px solid white");
         $("#my-image").animate({ border: "5px solid white" }, "slow");
