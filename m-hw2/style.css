@@ -53,9 +53,11 @@ div#header {
   min-height: 130px;
   /* setting a minimum height of an element means that it can grow to be bigger, if there is a lot of content in it. However, if it doesn't have enough content, it will be at the very least (in this example) 130 pixels tall */
   padding: 45px 15px 15px;
-  /* by setting a padding, the content within a HTML element will not touch the edges of that element (by adding padding to an element, it actually makes that element appear wider and/or taller.  In this case, the header div is now 15px wider and taller on each side. */
+  /* by setting a padding, the content within a HTML element will not touch the edges of that element (by adding padding to an element, it actually makes that element appear wider and/or taller.  
+  In this case, the header div is now 15px wider and taller on each side. */
   width: 870px;
-  /* sets the width of the div to 900px. Remember that if you add padding to this element it will increase the size by the number of pixels in the padding. In this example the width is 900px and we have 15px to the left and right so the total width of the header will be (870px + 15px+15px=930px */
+  /* sets the width of the div to 900px. Remember that if you add padding to this element it will increase the size by the number of pixels in the padding. 
+  In this example the width is 900px and we have 15px to the left and right so the total width of the header will be (870px + 15px+15px=930px */
 }
 
 ul.navigation {
@@ -171,3 +173,76 @@ div#footer {
   clear: both;
   /* this clears floats.  This would be used to cancel out a float's behavior on content below it.  */
 }
+@media screen and (max-width: 669px) {
+	body {
+		font-size: 1rem; /*accessible unit ! dont use px */
+	}
+
+	div#header,
+	div#footer,
+	div.sidebar-left,
+	div.col-right,
+	div.content {
+		width: 100%;
+	}
+
+	div#footer,
+	div#header {
+		padding: 10px;
+		margin-right: 0;
+	}
+
+	p {
+		word-wrap: break-word; /* Break words if they don't fit on one line */
+		overflow-wrap: break-word; /* Allow word breaks at hyphens and normal word breaks */
+	  }
+
+	/* Ensure images are responsive */
+	img {
+		max-width: 40%;
+		height: auto;
+	}
+
+	div.sidebar-left {
+		padding: 0;
+		margin-top: 10px;
+	}
+
+	div.content {
+		margin-left: 5px
+	}
+}
+
+/* Add this animation at the end of your CSS file */
+@keyframes slideIn {
+	0% {
+	  transform: translateY(100%);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateY(0);
+	  opacity: 1;
+	}
+  }
+  
+  div#footer {
+	animation: slideIn 1s ease-in-out; /* Apply the animation to the footer */
+  }
+  
+
+  /* Add this animation at the end of your CSS file */
+@keyframes slideIn {
+	0% {
+	  transform: translateY(100%);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateY(0);
+	  opacity: 1;
+	}
+  }
+  
+  div#footer {
+	animation: slideIn 1s ease-in-out; /* Apply the animation to the footer */
+  }
+  
