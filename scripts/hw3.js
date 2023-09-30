@@ -5,15 +5,6 @@ $(function () {
   $('.hwParts').hide();
   $('.overview').show();
 
-  function clearInputsAndError() {
-    $('#hwAverage').val('');
-    $('#midtermExam').val('');
-    $('#finalExam').val('');
-    $('#participation').val('');
-    $('#results').hide();
-    $('.btn-class').removeClass('activeSubMenuButton');
-  }
-
   $('.btn-class').click(function () {
       // Hide all sections
       $('.hwParts').hide();
@@ -30,13 +21,22 @@ $(function () {
   $('#calculateBtn').click(function () {
 
     $('#results').show();
+    // If calculate button is clicked show in results section that it was clicked
+    // TODO: Modify this to show the grade average
+    $('#results').text('Calculate button clicked')
     // Clear the fields after the clear button is clicked
-    $('#clearBtn').click(function clear(){
-      $('#hwAverage').val('');
-      $('#midtermExam').val('');
-      $('#finalExam').val('');
-      $('#participation').val('');
-      $('#results').hide();
+    $('#clearBtn').click(function (){
+      clearInputsAndError()
     })
   });
 });
+
+function clearInputsAndError() {
+  console.log('clearInputsAndError function called')
+  $('#hwAverage').val('');
+  $('#midtermExam').val('');
+  $('#finalExam').val('');
+  $('#participation').val('');
+  $('#results').hide();
+  $('.btn-class').removeClass('activeSubMenuButton');
+}
