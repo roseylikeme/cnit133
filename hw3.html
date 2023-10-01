@@ -16,9 +16,11 @@
           integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
       <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
       <!-- Scripts -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-          integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+      <link rel="stylesheet" href="/resources/demos/style.css">
+      <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+      <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
           <script src="scripts/sharedScript.js"></script>
       <script src="scripts/hw3.js"></script>
 </head>
@@ -136,24 +138,24 @@
                                     <h5 class="header text-center">Part 2</h5>
                                     <div class="labels text-center">
                                         <label>Salesperson:</label>
-                                        <input id="salespersonField" type="text">
+                                        <input id="salesperson" type="text" title="Please make sure that the salesperson's name is spelled correctly">
                                     </div>
                                     <p class="text-center">Type the number of each item sold</p>
                                     <div class="labels text-center">
                                         <label>Item 1:</label>
-                                        <input id="item1InputField" type="number" min="0">
+                                        <input id="item1" type="number" min="0">
                                     </div>
                                     <div class="labels text-center">
                                         <label>Item 2:</label>
-                                        <input id="item2InputField" type="number" min="0">
+                                        <input id="item2" type="number" min="0">
                                     </div>
                                     <div class="labels text-center">
                                         <label>Item 3:</label>
-                                        <input id="item2InputField" type="number" min="0">
+                                        <input id="item3" type="number" min="0">
                                     </div>
                                     <div class="labels text-center">
                                         <label>Item 4:</label>
-                                        <input id="item2InputField" type="number" min="0">
+                                        <input id="item4" type="number" min="0">
                                     </div>
                                     <div class="container d-flex justify-content-center flex-column">
                                         <table class="table-responsive table-bordered">
@@ -166,40 +168,45 @@
                                                 </tr>
                                                 <tr>
                                                     <td>1</td>
-                                                    <td id="">$20.99</td>
+                                                    <td id="item1Price">$20.99</td>
                                                     <td><input id="qtySold1" type="number" disabled></td>
-                                                    <td><input id="total" type="number" disabled></td>
+                                                    <td><input id="item1-total" type="number" disabled></td>
                                                 </tr>
                                                 <tr>
                                                     <td>2</td>
-                                                    <td id="">$12.75</td>
+                                                    <td id="item2Price">$12.75</td>
                                                     <td><input id="qtySold2" type="number" disabled></td>
-                                                    <td><input id="total" type="number" disabled></td>
+                                                    <td><input id="item2-total" type="number" disabled></td>
                                                 </tr>
                                                 <tr>
                                                     <td>3</td>
-                                                    <td id="">$9.95</td>
+                                                    <td id="item3Price">$9.95</td>
                                                     <td><input id="qtySold3" type="number" disabled></td>
-                                                    <td><input id="total" type="number" disabled></td>
+                                                    <td><input id="item3-total" type="number" disabled></td>
                                                 </tr>
                                                 <tr>
                                                     <td>4</td>
-                                                    <td id="">$35.89</td>
+                                                    <td id="item4Price">$35.89</td>
                                                     <td><input id="qtySold4" type="number" disabled></td>
-                                                    <td><input id="total" type="number" disabled></td>
+                                                    <td><input id="item4-total" type="number" disabled></td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="3" class="fw-bold">Total Amount Sold</td>
-                                                    <td><input id="totalAmountSoldField" type="number" disabled></td>
+                                                    <td><input id="total-sold" type="number" disabled></td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="3" class="fw-bold">Total Weekly Earnings</td>
-                                                    <td><input id="totalWeeklyEarningsField" type="number" disabled></td>
+                                                    <td><input id="total-earnings" type="number" disabled></td>
                                                 </tr>
                                             </tbody>
                                         </table>
-                                        <button class="btn-class-only" id="calculateExchangeRateBtn">Calculate</button>
-                                        <div id="extraCreditError"></div>
+                                        <div class="container text-center mt-2">
+                                            <button class="btn-class-only" id="calculateTotalsBtnPt2">Calculate</button>
+                                            <button class="btn-class-only" id="clearBtnPt2">Clear</button>
+                                        </div>
+                                        <div id="resultsPt2" class="container results">
+
+                                        </div>
                                     </div>
                                 </div>
                                 <div id="pt3" class="hwParts">

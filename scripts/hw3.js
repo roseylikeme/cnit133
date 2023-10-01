@@ -16,6 +16,61 @@ $(document).ready(function () {
     $('#clearBtn').click(function () {
         clearInputsAndError();
     });
+
+    // Part two
+    $('#salesperson').tooltip({
+      content: "Please make sure that the salesperson's name is spelled correctly",
+      track: true
+    });
+
+    $('#calculateTotalsBtnPt2').click(function () {
+      const itemPrices = {
+          item1: parseFloat($('#item1Price').text().substring(1)),
+          item2: parseFloat($('#item2Price').text().substring(1)),
+          item3: parseFloat($('#item3Price').text().substring(1)),
+          item4: parseFloat($('#item4Price').text().substring(1)),
+      };
+    
+      const itemsSoldInputValues = {
+          item1: parseInt($('#item1').val()),
+          item2: parseInt($('#item2').val()),
+          item3: parseInt($('#item3').val()),
+          item4: parseInt($('#item4').val()),
+      };
+    
+      let errorMessage = '';
+    
+      // Check for empty or negative input values
+      for (const item in itemsSoldInputValues) {
+          if (itemsSoldInputValues[item] < 0 || isNaN(itemsSoldInputValues[item])) {
+              errorMessage = 'Please enter a valid number of items sold for ' + item + '!';
+              break;
+          }
+      }
+    
+      if (errorMessage) {
+          $('#resultsPt2').text(errorMessage).show();
+      } else {
+          const itemTotals = {};
+          let totalSold = 0;
+    
+          for (const item in itemsSoldInputValues) {
+              itemTotals[item] = (itemsSoldInputValues[item] * itemPrices[item]).toFixed(2);
+              totalSold += parseFloat(itemTotals[item]);
+              $('#' + item + '-total').val(itemTotals[item]);
+          }
+    
+          const totalEarnings = (250 + (totalSold * 0.09)).toFixed(2);
+    
+          // Update fields
+          $('#total-sold').val(totalSold.toFixed(2));
+          $('#total-earnings').val(totalEarnings);
+    
+          // Clear any previous error message
+          $('#resultsPt2').text('').hide();
+      }
+    });
+  
 });
 
 function showSection(targetId) {
@@ -81,3 +136,4 @@ function calculateGradeAverage(inputValues) {
 function calculateAndDisplayResult() {
     checkValidInput();
 }
+
