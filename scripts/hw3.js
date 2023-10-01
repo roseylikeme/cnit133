@@ -8,6 +8,7 @@ $(document).ready(function () {
     });
 
     $('#results').hide();
+    $('#resultsPt2').hide();
 
     $('#calculateBtn').click(function () {
         calculateAndDisplayResult();
