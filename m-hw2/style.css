@@ -227,22 +227,4 @@ div#footer {
   
   div#footer {
 	animation: slideIn 1s ease-in-out; /* Apply the animation to the footer */
-  }
-  
-
-  /* Add this animation at the end of your CSS file */
-@keyframes slideIn {
-	0% {
-	  transform: translateY(100%);
-	  opacity: 0;
-	}
-	100% {
-	  transform: translateY(0);
-	  opacity: 1;
-	}
-  }
-  
-  div#footer {
-	animation: slideIn 1s ease-in-out; /* Apply the animation to the footer */
-  }
-  
+}
