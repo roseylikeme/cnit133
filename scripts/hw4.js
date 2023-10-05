@@ -10,7 +10,8 @@ $(document).ready(function () {
     $('#results').hide();
     $('#resultsPt2').hide();
 
-    part1();
+    part1a();
+    part1b();
 });
 
 function showSection(targetId) {
@@ -20,7 +21,7 @@ function showSection(targetId) {
     $('[data-target="' + targetId + '"]').addClass('activeSubMenuButton');
 }
 
-function part1() {
+function part1a() {
     // Use the for loop statement that calculates the product and sum of every fourth integer from 5 to 25 inclusive.
     let product = 1;
     let sum = 0;
@@ -32,8 +33,28 @@ function part1() {
     }
 
     // Display the results
-    $('#pt1a').text(`The product of every fourth integer from 5 to 25 is:`);
-    $('#pt1aa').text(`${product.toLocaleString()}`)
-    $('#pt1b').text(`The sum of every fourth integer from 5 to 25 is:`);
-    $('#pt1bb').text(`${sum}`)
+    $('#pt1a').text(`Product of every fourth integer is:`);
+    $('#pt1product').text(`${product.toLocaleString()}`)
+    $('#pt1ab').text(`Sum of every fourth integer is:`);
+    $('#pt1sum').text(`${sum}`)
+}
+
+function part1b() {
+    let sumOfThirds = 0;
+    let productOfThirds = 1;
+
+    let currentInteger = 3;
+
+    // Use a while loop
+    while (currentInteger <= 18) {
+        // Calculate sum
+        sumOfThirds += currentInteger;
+        // calc product
+        productOfThirds *= currentInteger;
+        // increment current int by 3
+        currentInteger += 3;
+    }
+    // display results
+    $('#pt1bproduct').text(`Product of every third integer: ${productOfThirds.toLocaleString()}`);
+    $('#pt1bsum').text(`Sum of every third integer: ${sumOfThirds}`);
 }
