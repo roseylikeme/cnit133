@@ -394,3 +394,13 @@ div.results p {
 .addGap {
     gap: 5px
 }
+
+.ui-helper-hidden-accessible {
+    display:none;
+}
+
+.custom-tooltip {
+    padding: 5px 10px;
+    background-color: #181d3b;
+    color: white;
+}

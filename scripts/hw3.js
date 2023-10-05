@@ -51,7 +51,7 @@ $(document).ready(function () {
     // Part two
     $('#salesperson').tooltip({
       content: "Please make sure that the salesperson's name is spelled correctly",
-      track: true
+      track: true,
     });
 
     $('#calculateTotalsBtnPt2').click(function () {
