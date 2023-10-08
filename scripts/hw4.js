@@ -12,6 +12,10 @@ $(document).ready(function () {
 
     part1a();
     part1b();
+    // Calculate and display compound interest tables
+    pt2_calculateCompoundInterest(1000, 0.05, 5, "interestTable5"); // 5% interest
+    pt2_calculateCompoundInterest(1000, 0.06, 5, "interestTable6"); // 6% interest
+    pt2_calculateCompoundInterest(1000, 0.07, 5, "interestTable7"); // 7% interest
 });
 
 function showSection(targetId) {
@@ -57,4 +61,23 @@ function part1b() {
     // display results
     $('#pt1bproduct').text(`Product of every third integer: ${productOfThirds.toLocaleString()}`);
     $('#pt1bsum').text(`Sum of every third integer: ${sumOfThirds}`);
+}
+
+function pt2_calculateCompoundInterest(principal, rate, years, tableId) {
+    const interestTable = document.getElementById(tableId);
+    interestTable.innerHTML = ""; // Clear previous data
+
+    for (let year = 1; year <= years; year++) {
+        const amount = principal * Math.pow(1 + rate, year);
+        const formattedRate = (rate * 100).toFixed(2);
+        
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${year}</td>
+            <td>$${amount.toFixed(2)}</td>
+            <td>${formattedRate}%</td>
+        `;
+        
+        interestTable.appendChild(row);
+    }
 }
