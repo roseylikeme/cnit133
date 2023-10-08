@@ -16,6 +16,41 @@ $(document).ready(function () {
     pt2_calculateCompoundInterest(1000, 0.05, 5, "interestTable5"); // 5% interest
     pt2_calculateCompoundInterest(1000, 0.06, 5, "interestTable6"); // 6% interest
     pt2_calculateCompoundInterest(1000, 0.07, 5, "interestTable7"); // 7% interest
+
+    // pt3
+    const squareResults = $('#squareResults');
+
+    $('#generate').click(function () {
+        const squareSize = parseInt($('#numberInput').val());
+
+        if (!isNaN(squareSize) && squareSize >= 2 && squareSize <= 10) {
+            const square = generateHollowSquare(squareSize);
+            squareResults.html(square);
+        } else {
+            squareResults.html("Please enter a valid number between 2 and 10.");
+        }
+    });
+
+    $('#reset').click(function () {
+        $('#numberInput').val('');
+        squareResults.html('');
+    });
+
+    function generateHollowSquare(size) {
+        let square = '';
+        for (let i = 0; i < size; i++) {
+            square += "* ";
+            for (let j = 1; j < size; j++) {
+                if (i === 0 || i === size - 1 || j === size - 1) {
+                    square += "* ";
+                } else {
+                    square += "&nbsp;&nbsp;&nbsp;";
+                }
+            }
+            square += "<br>";
+        }
+        return square;
+    }
 });
 
 function showSection(targetId) {
@@ -70,14 +105,14 @@ function pt2_calculateCompoundInterest(principal, rate, years, tableId) {
     for (let year = 1; year <= years; year++) {
         const amount = principal * Math.pow(1 + rate, year);
         const formattedRate = (rate * 100).toFixed(2);
-        
+
         const row = document.createElement("tr");
         row.innerHTML = `
             <td>${year}</td>
             <td>$${amount.toFixed(2)}</td>
             <td>${formattedRate}%</td>
         `;
-        
+
         interestTable.appendChild(row);
     }
 }

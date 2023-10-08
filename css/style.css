@@ -248,7 +248,6 @@ body {
     width: 100%;
     margin-left: 100px;
     margin-right: auto;
-    padding: auto;
     background: #fdfdfd;
     /* Use google lato font */
     font-family: "Open Sans", sans-serif;
@@ -297,6 +296,19 @@ footer a {
 .btn-class-only:hover,
 .btn-class:hover {
     background-color: #181d3b;
+}
+
+.btn-class-only-2,
+.btn-class-2 {
+    background-color: #fff;
+    padding: 3px;
+    border-radius: 10px;
+    color: black;
+}
+
+.btn-class-only-2:hover,
+.btn-class-2:hover {
+    background-color: #ae4646;
 }
 
 .activeSubMenuButton {
@@ -404,3 +416,28 @@ div.results p {
     background-color: #181d3b;
     color: white;
 }
+
+.square-num-input {
+    width: 5rem; /* Adjust the width to your preference */
+    height: 5rem; /* Make the height the same as the width to create a square */
+    font-size: 20px; /* Adjust the font size as needed */
+    padding: 10px; /* Add padding for better visual appearance */
+    border: 2px solid #ccc; /* Add a border for the square */
+    border-radius: 10px; /* Add rounded corners if desired */
+    text-align: center;
+}
+
+.square-num-input::-webkit-inner-spin-button,
+.square-num-input::-webkit-outer-spin-button {
+    width: 50px;
+    height: 50px;
+}
+
+.squareResults {
+    font-family: "monospace";
+    color: #ae4646;
+    font-size: 20px;
+    line-height: .8;
+    text-align: center;
+}
+  
