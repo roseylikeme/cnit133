@@ -51,7 +51,7 @@ $(document).ready(function () {
     // Part two
     $('#salesperson').tooltip({
       content: "Please make sure that the salesperson's name is spelled correctly",
-      track: true
+      track: true,
     });
 
     $('#calculateTotalsBtnPt2').click(function () {
@@ -89,7 +89,7 @@ $(document).ready(function () {
               itemTotals[item] = (itemsSoldInputValues[item] * itemPrices[item]).toFixed(2);
               totalSold += parseFloat(itemTotals[item]);
   
-              // Update quantity sold input fields (notice the corrected IDs)
+              // Update quantity sold input fields
               $('#' + item + '-sold').val(itemsSoldInputValues[item]);
               $('#' + item + '-total').val(itemTotals[item]);
           }
@@ -117,7 +117,6 @@ function showSection(targetId) {
 }
 
 function clearInputsAndError() {
-    console.log('clearInputsAndError function called');
     $('#hwAverage, #midtermExam, #finalExam, #participation').val('');
     $('#results').hide();
     $('.btn-class').removeClass('activeSubMenuButton');
