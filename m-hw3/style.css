@@ -222,7 +222,6 @@ a {
 .hero-content {
   z-index: 1; /* Ensure the content is above the image */
   color: white;
-  margin-left: 3rem;
 }
 #hero-area h1 {
     font-size: 4rem;
