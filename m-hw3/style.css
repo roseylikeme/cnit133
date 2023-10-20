@@ -515,14 +515,93 @@ a {
 
 /* Add this section for the About Us */
 
+
 .about-content {
     color: #333; 
     padding: 2rem; 
     text-align: center;
 }
 
-
+.product-content,
 .about-content p {
     font-size: 1.2rem; 
     margin: 1rem 0;
+}
+
+/* Product */
+.breadcrumb-bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(toys.jpg);
+    position: relative;
+}
+
+.breadcrumb-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.38); /* Adjust the alpha (last value) for transparency */
+}
+
+.breadcrumb-bg .breadcrumb-holder {
+    height: 480px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center
+}
+
+.breadcrumb-transparent {
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    background-color: transparent
+}
+
+.breadcrumb-transparent .breadcrumb-item+.breadcrumb-item::before {
+    color: #fff;
+    font-family: "font awesome 5 free";
+    content: "\276F\00a0";
+    padding: 0 5px
+}
+
+.breadcrumb-element {
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 250px
+}
+
+.breadcrumb-element h1,.breadcrumb-element .h1 {
+    font-weight: 700;
+    color: #fff;
+    text-align: center
+}
+
+.breadcrumb-element p {
+    color: #fff;
+    text-align: center
+}
+
+.breadcrumb-title {
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    font-size: 2.5rem;
+    font-family: dosis,sans-serif
+}
+
+.breadcrumb-text {
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1; /* Ensure the text is above the overlay */
 }
