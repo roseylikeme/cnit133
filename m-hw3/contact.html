@@ -114,10 +114,10 @@
       
       <!-- Contact Us -->
       <section class="about-us pt-9 pb-6 py-md-7">
-        <div class="container">
+        <div class="container mb-3">
           <div class="mb-9">
             <div class="row wow fadeInUp">
-              <div class="col-sm-4 col-xs-12">
+              <div class="col-sm-6 col-xs-12">
                 <div class="media flex-md-column flex-lg-row mb-4">
                   <div class="icon-rounded-circle-large shadow-sm mb-md-2 me-md-0 me-2 me-lg-2 bg-primary">
                     <i class="fas fa-map-marker-alt text-white" aria-hidden="true"></i>
@@ -132,7 +132,7 @@
                 </div>
               </div>
       
-              <div class="col-sm-4 col-xs-12">
+              <div class="col-sm-6 col-xs-12">
                 <div class="media flex-md-column flex-lg-row mb-6">
                   <div class="icon-rounded-circle-large shadow-sm me-2 mb-md-2 me-md-0 me-lg-2 bg-success">
                     <i class="fas fa-phone-alt text-white" aria-hidden="true"></i>
@@ -145,8 +145,11 @@
                   </div>
                 </div>
               </div>
-      
-              <div class="col-sm-4 col-xs-12">
+            
+            </div>
+
+            <div class="row wow fadeInUp">
+              <div class="col-sm-6 col-xs-12">
                 <div class="media flex-md-column flex-lg-row mb-3 mb-md-0">
                   <div class="icon-rounded-circle-large shadow-sm me-2 mb-md-2 me-md-0 me-lg-2 bg-danger">
                     <i class="far fa-envelope text-white" aria-hidden="true"></i>
@@ -154,7 +157,21 @@
                   <div class="media-body">
                     <h3 class="media-heading text-danger mt-0 font-weight-bold mb-1">Email:</h3>
                     <p class="font-weight-medium">
-                      <a class="text-muted text-wrap" href="mailto:abctoys@example.com">abctoys@example.com</a>
+                      <a class="text-muted text-wrap font-weight-medium" href="mailto:abctoys@example.com">abctoys@example.com</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-sm-6 col-xs-12">
+                <div class="media flex-md-column flex-lg-row mb-3 mb-md-0">
+                  <div class="icon-rounded-circle-large shadow-sm me-2 mb-md-2 me-md-0 me-lg-2 bg-info">
+                    <i class="fab fa-facebook text-white" aria-hidden="true"></i>
+                  </div>
+                  <div class="media-body">
+                    <h3 class="media-heading text-info mt-0 font-weight-bold mb-1">Facebook:</h3>
+                    <p class="font-weight-medium">
+                      <a class="text-muted text-wrap font-weight-medium" href="https://www.facebook.com/abctoys" target="_blank">Visit ABC Toys on FB</a>
                     </p>
                   </div>
                 </div>
@@ -162,12 +179,70 @@
             </div>
           </div>
         </div>
+        <!-- Form -->
+        <h2 class="text-center mb-5 mt-5">Send us a message</h2>
+        <form>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-xs-12">
+                <label for="first-name" class="form-label">First Name</label>
+                <div class="form-group form-group-icon">
+                  <i class="fa fa-user"></i>
+                  <input type="text" id="first-name" class="form-control border-primary" placeholder="First name" required="">
+                </div>
+              </div>
+        
+              <div class="col-sm-6 col-xs-12">
+                <label for="email" class="form-label">Email Address</label>
+                <div class="form-group form-group-icon">
+                  <i class="fa fa-envelope"></i>
+                  <input type="email" id="email" class="form-control border-success" placeholder="Email address" required="">
+                </div>
+              </div>
+        
+              <div class="col-12">
+                <label for="message" class="form-label">Message</label>
+                <div class="form-group form-group-icon">
+                  <i class="fa fa-comments"></i>
+                  <textarea id="message" class="form-control border-info" placeholder="Write message" rows="6" spellcheck="false"></textarea>
+                </div>
+              </div>
+        
+              <div class="col-12">
+                <div class="text-sm-center mt-3">
+                  <button type="submit" class="btn btn-danger text-uppercase">
+                    Send Message
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
       </section>
-
-      <!-- Contact Form -->
-
     </div>
 </main>
+<footer class="footer">
+  <div class="color-bar">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col color-bar bg-warning d-none d-md-block"></div>
+        <div class="col color-bar bg-success d-none d-md-block"></div>
+        <div class="col color-bar bg-danger d-none d-md-block"></div>
+        <div class="col color-bar bg-info d-none d-md-block"></div>
+        <div class="col color-bar bg-purple d-none d-md-block"></div>
+        <div class="col color-bar bg-pink d-none d-md-block"></div>
+        <div class="col color-bar bg-warning"></div>
+        <div class="col color-bar bg-success"></div>
+        <div class="col color-bar bg-danger"></div>
+        <div class="col color-bar bg-info"></div>
+        <div class="col color-bar bg-purple"></div>
+        <div class="col color-bar bg-pink"></div>
+      </div>
+    </div>
+  </div>
+  <div class="pt-8 pb-7 container">
+  </div>
+</footer>
 </body>
 <!--Jquery -->
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/animatecss/3.5.2/animate.min.css">
