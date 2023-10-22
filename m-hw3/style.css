@@ -372,14 +372,6 @@ a {
     flex-direction: column
 }
 
-@media(min-width: 768px) {
-    .section-title {
-        -webkit-box-orient:horizontal;
-        -webkit-box-direction: normal;
-        flex-direction: row
-    }
-}
-
 .section-title .shape {
     width: 18px;
     height: 18px;
@@ -558,10 +550,18 @@ a {
 /* Media */
 .media {
     display: flex;
-    align-items: flex-start
+    align-items: start;
+    -webkit-box-align: start;
 }
 
 
+/* Add this CSS to handle text wrapping for email */
+.text-wrap {
+    white-space: nowrap; /* Prevent line breaks */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Show ellipsis (...) for long text */
+    word-break: break-all; /* Allow the email to break at any character */
+}
 
 
 /* Media Queries */
@@ -573,6 +573,13 @@ a {
         background-color: transparent;
         box-shadow: none
     }
+
+    .section-title {
+        -webkit-box-orient:horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row
+    }
+
     .section-title h2,.section-title .h2 {
         -webkit-box-ordinal-group:1;
         order: 0
@@ -606,6 +613,8 @@ a {
         margin-bottom: .625rem;
         display: block
     }
+
+
 }
 
 @media(min-width: 992px) {

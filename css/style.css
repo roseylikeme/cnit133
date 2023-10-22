@@ -331,7 +331,7 @@ div .labels{
     margin-bottom: 10px;
 }
 
-container d-flex justify-content-center flex-column mb-3 {
+.container d-flex justify-content-center flex-column mb-3 {
     width: 600px;
 }
 
