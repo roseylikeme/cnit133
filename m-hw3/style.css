@@ -554,8 +554,8 @@ a {
 /* Media */
 .media {
     display: flex;
-    align-items: start;
-    -webkit-box-align: start;
+    align-items: center;
+    -webkit-box-align: center;
 }
 
 
@@ -686,3 +686,9 @@ a {
     margin-bottom: .4rem;
     font-weight: 600;
 }
+
+body > main > div > section.contact-us.pt-9.pb-6.py-md-7 > form > div,
+body > main > div > section.contact-us.pt-9.pb-6.py-md-7 > div {
+    max-width: 540px;
+}
+
