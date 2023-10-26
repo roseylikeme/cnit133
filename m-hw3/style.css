@@ -739,3 +739,10 @@ table td {
 table tr:nth-child(even) {
     background-color: #f8f8f8; /* Background color for even rows */
 }
+
+body > footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
