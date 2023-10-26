@@ -158,6 +158,9 @@
       map.on('locationfound', (e) => {
         const { lat, lng } = e.latlng;
         $("#currentPos").text(`Current Location: ${lat}, ${lng}`);
+        L.marker([lat, lng]).addTo(map)
+          .bindPopup('You are here!');
+        locationControl.stop();
       });
 
       // Tile layers
