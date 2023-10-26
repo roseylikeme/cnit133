@@ -136,10 +136,8 @@
   <script>
     new WOW().init();
   
-    var abcToysFakeCoords = [40.423494,-3.682068];
+    var abcToysFakeCoords = [0,0];
     var map = L.map('map').setView(abcToysFakeCoords, 13);
-    L.marker(abcToysFakeCoords, {draggable: false}).addTo(map)
-      .bindPopup('ABC Toys') // add popup with content
   
     // Leaflet Control
     var lc = L.control
@@ -152,6 +150,8 @@
         enableHighAccuracy: false
       }
     }).addTo(map);
+
+    lc.start(); // Start geolocation as soon as the control is added to the map
   
     map.on('locationfound', function(e) {
       var latlng = e.latlng;
