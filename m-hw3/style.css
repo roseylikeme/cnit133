@@ -695,13 +695,48 @@ a {
     font-weight: 600;
 }
 
-body > main > div > section.extras.pt-9.pb-6.py-md-7 > div,
+
 body > main > div > section.contact-us.pt-9.pb-6.py-md-7 > form > div,
 body > main > div > section.contact-us.pt-9.pb-6.py-md-7 > div {
     max-width: 540px;
 }
 
+body > main > div > section.extras.pt-9.pb-6.py-md-7 > div {
+    max-width: 750px;
+}
+
 /* Satisfy cnit requirements for fixed navbar */
 main {
     margin-top: 130.3px;
+}
+
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 1rem 0;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the table header row */
+table th {
+    background-color: #f0c24b; /* Change this to your preferred header background color */
+    color: #fff; /* Header text color */
+    padding: 10px;
+    text-align: left;
+}
+
+/* Style the table body rows */
+table td {
+    border: 1px solid #e5e5e5; /* Border color for table cells */
+    padding: 10px;
+    font-weight: 500;
+}
+
+/* Style alternating rows for better readability */
+table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Background color for even rows */
 }

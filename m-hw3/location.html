@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ABC Toys</title>
  <!-- Fonts -->
@@ -10,12 +10,12 @@
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Open+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
  <!-- Leaflet -->
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
- <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css">
+ <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js"></script>
  <link rel="stylesheet" href="style.css">
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
  <style>
@@ -118,8 +118,8 @@
     </section>
     <section class="map-section pt-9 pb-6 py-md-7">
       <div class="container mb-3">
+        <h2 class="h2 text-center">Leaflet Map</h2>
         <div class="mb-9" id="map">
-          
         </div>
         <p id="currentPos">
         </p>
@@ -127,70 +127,70 @@
     </section>
     </div>
   </main>
+  <!--Jquery -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/animatecss/3.5.2/animate.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <!-- Owl Carousel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    new WOW().init();
+  
+    var abcToysFakeCoords = [40.423494,-3.682068];
+    var map = L.map('map').setView(abcToysFakeCoords, 13);
+    L.marker(abcToysFakeCoords, {draggable: false}).addTo(map)
+      .bindPopup('ABC Toys') // add popup with content
+  
+    // Leaflet Control
+    var lc = L.control
+    .locate({
+      position: "bottomleft",
+      strings: {
+        title: "Show my current location!"
+      },
+      locateOptions: {
+        enableHighAccuracy: false
+      }
+    }).addTo(map);
+  
+    map.on('locationfound', function(e) {
+      var latlng = e.latlng;
+      $("#currentPos").text("Current Location: " + latlng.lat + ", " + latlng.lng);
+    });
+  
+    /*==============================================
+                      TILE LAYER
+      ================================================*/
+    var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    })
+  
+    // stadia outdoors
+    var Stadia_Outdoors = L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.{ext}', {
+      minZoom: 0,
+      maxZoom: 20,
+      attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      ext: 'png'
+    });
+  
+    // Google map
+    var googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+      maxZoom: 20,
+      subdomains:['mt0','mt1','mt2','mt3']
+    });
+  
+    // Different map styles
+    var baseMap = {
+      "Open Street Map": osm,
+      "Stadia Outdoors": Stadia_Outdoors,
+      "Google Streets": googleStreets
+    };
+  
+    // Add baseLayers to map
+    L.control.layers(baseMap).addTo(map);
+  
+    osm.addTo(map)
+  </script>
 </body>
-<!--Jquery -->
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/animatecss/3.5.2/animate.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-<!-- Owl Carousel -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script>
-  new WOW().init();
-
-  var abcToysFakeCoords = [40.423494,-3.682068];
-  var map = L.map('map').setView(abcToysFakeCoords, 13);
-  L.marker(abcToysFakeCoords, {draggable: false}).addTo(map)
-    .bindPopup('ABC Toys') // add popup with content
-
-  // Leaflet Control
-  var lc = L.control
-  .locate({
-    position: "bottomleft",
-    strings: {
-      title: "Show my current location!"
-    },
-    locateOptions: {
-      enableHighAccuracy: false
-    }
-  }).addTo(map);
-
-  map.on('locationfound', function(e) {
-    var latlng = e.latlng;
-    $("#currentPos").text("Current Location: " + latlng.lat + ", " + latlng.lng);
-  });
-
-  /*==============================================
-                    TILE LAYER
-    ================================================*/
-  var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 18,
-      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-  })
-
-  // stadia outdoors
-  var Stadia_Outdoors = L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.{ext}', {
-    minZoom: 0,
-    maxZoom: 20,
-    attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    ext: 'png'
-  });
-
-  // Google map
-  var googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
-    maxZoom: 20,
-    subdomains:['mt0','mt1','mt2','mt3']
-  });
-
-  // Different map styles
-  var baseMap = {
-    "Open Street Map": osm,
-    "Stadia Outdoors": Stadia_Outdoors,
-    "Google Streets": googleStreets
-  };
-
-  // Add baseLayers to map
-  L.control.layers(baseMap).addTo(map);
-
-  osm.addTo(map)
-</script>
 </html>
