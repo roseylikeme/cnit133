@@ -126,6 +126,9 @@ a {
 
 .color-bars {
     width: 100%;
+    top: 0;
+    position: fixed;
+    z-index: 1000;
 }
 
 .color-bar {
@@ -154,12 +157,17 @@ a {
 }
 
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+
+    background-color: #fff;
     box-shadow: 0 .25rem 0 rgba(139, 97, 97, 0.1);
     padding: .32rem 0;
-    z-index: 999;
     -webkit-transition: .4s ease-in-out;
     transition: .4s ease-in-out;
-    background-color: #fff;
 }
 
 .nav-icon {
@@ -198,14 +206,6 @@ a {
     flex-grow: 1;
     -webkit-box-align: center;
     align-items: center
-}
-/* Satisfy CNIT133M REQUIREMENTS -- remove after graded for better styling...*/
-#pageTop {
-    position: fixed;
-    top: 0;
-    z-index: 9999;
-    width: 100%;
-    overflow: hidden;
 }
 
 .navbar .navbar-collapse {
@@ -695,6 +695,7 @@ a {
     font-weight: 600;
 }
 
+body > main > div > section.extras.pt-9.pb-6.py-md-7 > div,
 body > main > div > section.contact-us.pt-9.pb-6.py-md-7 > form > div,
 body > main > div > section.contact-us.pt-9.pb-6.py-md-7 > div {
     max-width: 540px;
@@ -702,5 +703,5 @@ body > main > div > section.contact-us.pt-9.pb-6.py-md-7 > div {
 
 /* Satisfy cnit requirements for fixed navbar */
 main {
-    margin-top: 140px;
+    margin-top: 130.3px;
 }
