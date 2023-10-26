@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ABC Toys</title>
+ <!-- Fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Open+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+ <!-- Leaflet -->
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css">
+ <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js"></script>
+ <link rel="stylesheet" href="style.css">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+ <style>
+  #map { height: 500px; }
+ </style>
+</head>
+
+<body>
+  <header class="header" id="pageTop">
+    <!-- Top Color Bar -->
+    <div class="color-bars">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col color-bar bg-warning d-none d-md-block"></div>
+          <div class="col color-bar bg-success d-none d-md-block"></div>
+          <div class="col color-bar bg-danger d-none d-md-block"></div>
+          <div class="col color-bar bg-info d-none d-md-block"></div>
+          <div class="col color-bar bg-purple d-none d-md-block"></div>
+          <div class="col color-bar bg-pink d-none d-md-block"></div>
+          <div class="col color-bar bg-warning"></div>
+          <div class="col color-bar bg-success"></div>
+          <div class="col color-bar bg-danger"></div>
+          <div class="col color-bar bg-info"></div>
+          <div class="col color-bar bg-purple"></div>
+          <div class="col color-bar bg-pink"></div>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-md ">
+      <div class="container d-flex justify-content-between">
+        <a class="navbar-brand">
+            <img class="d-inline-block" src="logo-no-background.png" alt="ABC Toys">
+        </a>
+        <button 
+          class="navbar-toggler collapsed" 
+          data-bs-toggle="collapse" 
+          data-bs-target="#navbarContent" 
+          aria-controls="navbarContent" 
+          aria-expanded="false" 
+          aria-label="Toggle navigation">
+          <i class="fa fa-bars"></i> 
+        </button>
+        <!-- Left side of Navbar with Links -->
+        <div class="navbar-collapse collapse justify-content-end" id="navbarContent">
+          <ul class="navbar-nav ms-lg-auto">
+            <li class="nav-item dropdown bg-primary">
+              <a href="index.html" class="nav-link">
+                <i class="fas fa-home nav-icon"></i>
+                <span>Home</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown bg-danger">
+              <a href="products.html" class="nav-link">
+                <i class="fas fa-shop nav-icon"></i>
+                <span>Products</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown bg-success">
+              <a href="location.html" class="nav-link">
+                <i class="fas fa-location-pin nav-icon"></i>
+                <span>Location</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown bg-purple">
+              <a href="contact.html" class="nav-link">
+                <i class="fas fa-contact-book nav-icon"></i>
+                <span>Contact</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown bg-info">
+              <a href="extra.html" class="nav-link">
+                <i class="fas fa-plus-circle nav-icon"></i>
+                <span>Extras</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>  
+  <main>
+    <div class="main-wrapper location">
+    <section class="breadcrumb-bg" style="background-image: url(toys.jpg);">
+        <div class="container">
+          <div class="breadcrumb-overlay"></div>
+          <div class="breadcrumb-holder">
+            <div class="breadcrumb-text">
+              <h1 class="breadcrumb-title">Location</h1>
+              <ul class="breadcrumb breadcrumb-transparent">
+                <li class="breadcrumb-item">
+                  <a class="text-white" href="index.html">Home</a>
+                </li>
+                <li class="breadcrumb-item text-white active" aria-current="page">
+                  Location
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section class="map-section pt-9 pb-6 py-md-7">
+      <div class="container mb-3">
+        <h2 class="h2 text-center">Leaflet Map</h2>
+        <div class="mb-9" id="map">
+        </div>
+        <p id="currentPos">
+        </p>
+      </div>
+    </section>
+    </div>
+  </main>
+  <!--Jquery -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/animatecss/3.5.2/animate.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <!-- Owl Carousel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    new WOW().init();
+  
+    // Function to initialize the map
+    function initMap() {
+      const map = L.map('map').setView([0,0], 13);
+
+      // Leaflet Control for geolocation
+      const locationControl = L.control
+        .locate({
+          position: "bottomleft",
+          strings: {
+            title: "Show my current location!"
+          },
+          locateOptions: {
+            enableHighAccuracy: false
+          }
+        })
+        .addTo(map);
+
+      locationControl.start(); // Start geolocation as soon as the control is added to the map
+
+      map.on('locationfound', (e) => {
+        const { lat, lng } = e.latlng;
+        $("#currentPos").text(`Current Location: ${lat}, ${lng}`);
+        L.marker([lat, lng]).addTo(map)
+          .bindPopup('You are here!');
+        locationControl.stop();
+      });
+
+      // Tile layers
+      const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      });
+
+      const stadiaOutdoors = L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.{ext}', {
+        minZoom: 0,
+        maxZoom: 20,
+        attribution: `
+          &copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a>`,
+        ext: 'png'
+      });
+
+      const googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+      });
+
+      // Different map styles
+      const baseMaps = {
+        "Open Street Map": osm,
+        "Stadia Outdoors": stadiaOutdoors,
+        "Google Streets": googleStreets
+      };
+
+      // Add baseLayers to map
+      L.control.layers(baseMaps).addTo(map);
+
+      osm.addTo(map);
+    }
+
+    $(document).ready(initMap);
+  </script>
+</body>
+</html>
