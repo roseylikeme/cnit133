@@ -11,7 +11,6 @@ a {
     margin-bottom: 1.88rem!important
 }
 
-
 .pt-6 {
     padding-top: 1.88rem!important
 }
@@ -723,8 +722,8 @@ table {
 
 /* Style the table header row */
 table th {
-    background-color: #f0c24b; /* Change this to your preferred header background color */
-    color: #fff; /* Header text color */
+    background-color: #f0c24b; 
+    color: #fff;
     padding: 10px;
     text-align: left;
 }
@@ -738,5 +737,5 @@ table td {
 
 /* Style alternating rows for better readability */
 table tr:nth-child(even) {
-    background-color: #f9f9f9; /* Background color for even rows */
+    background-color: #f8f8f8; /* Background color for even rows */
 }
