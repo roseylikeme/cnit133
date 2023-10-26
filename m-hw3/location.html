@@ -121,6 +121,8 @@
         <div class="mb-9" id="map">
           
         </div>
+        <p id="currentPos">
+        </p>
       </div>
     </section>
     </div>
@@ -134,11 +136,61 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
   new WOW().init();
-  var map = L.map('map').setView([40.423494,-3.682068], 13);
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 18,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
-  L.control.locate().addTo(map);
+
+  var abcToysFakeCoords = [40.423494,-3.682068];
+  var map = L.map('map').setView(abcToysFakeCoords, 13);
+  L.marker(abcToysFakeCoords, {draggable: false}).addTo(map)
+    .bindPopup('ABC Toys') // add popup with content
+
+  // Leaflet Control
+  var lc = L.control
+  .locate({
+    position: "bottomleft",
+    strings: {
+      title: "Show my current location!"
+    },
+    locateOptions: {
+      enableHighAccuracy: false
+    }
+  }).addTo(map);
+
+  map.on('locationfound', function(e) {
+    var latlng = e.latlng;
+    $("#currentPos").text("Current Location: " + latlng.lat + ", " + latlng.lng);
+  });
+
+  /*==============================================
+                    TILE LAYER
+    ================================================*/
+  var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  })
+
+  // stadia outdoors
+  var Stadia_Outdoors = L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.{ext}', {
+    minZoom: 0,
+    maxZoom: 20,
+    attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    ext: 'png'
+  });
+
+  // Google map
+  var googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+    maxZoom: 20,
+    subdomains:['mt0','mt1','mt2','mt3']
+  });
+
+  // Different map styles
+  var baseMap = {
+    "Open Street Map": osm,
+    "Stadia Outdoors": Stadia_Outdoors,
+    "Google Streets": googleStreets
+  };
+
+  // Add baseLayers to map
+  L.control.layers(baseMap).addTo(map);
+
+  osm.addTo(map)
 </script>
 </html>
