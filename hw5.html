@@ -193,7 +193,7 @@
                                                 <option value="" disabled selected>Select</option>
                                             </select>
                                         </div>
-                                        <button class="btn-class-only-2 w-50">Go</button>
+                                        <button id="onClickVisitButton" class="btn-class-only-2 w-50">Go</button>
                                     </div>
                                 </div>
                                 <!-- Part 3 Tab -->
@@ -254,6 +254,45 @@
         function showMessage(message) {
             outputMessage.textContent = message;
         }
+
+        // Part 2
+        const onChangeField = document.getElementById("onChageSelect");
+        const onClickField = document.getElementById("onClickSelect");
+        const onClickVisitButton = document.getElementById("onClickVisitButton")
+
+        const websites = [
+            ["LinkedIn", "https://www.linkedin.com/in/roselene-g/"],
+            ["Rose's GitHub", "https://github.com/roseylikeme"],
+            ["YouTube", "https://www.youtube.com/@roselene/videos"],
+        ]
+
+        websites.forEach(([name, url]) => {
+            // Create a new option element for each select menu
+            const option1 = document.createElement("option");
+            option1.value = url;
+            option1.textContent = name;
+            
+            onChangeField.appendChild(option1);
+
+            const option2 = document.createElement("option");
+            option2.value = url;
+            option2.textContent = name;
+            onClickField.appendChild(option2);
+        });
+
+        onChangeField.addEventListener("change", () => {
+            const selectedUrl = onChangeField.value;
+            if (selectedUrl) {
+                window.open(selectedUrl, "_blank");
+            }
+        })
+
+        onClickVisitButton.addEventListener("click", () => {
+            const selectedUrl = onClickField.value;
+            if (selectedUrl) {
+                window.open(selectedUrl, "_blank");
+            }
+        })
     </script>
 </body>
 
