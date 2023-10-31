@@ -210,12 +210,16 @@
                                         information of that state.
                                     </p>
                                     <h5 class="header text-center">Part 3</h5>
-                                    <div class="bg-gray-rounded">
-                                        <label for="stateInput">State:</label>
-                                        <input class="w-25" type="text" id="stateInput">
-                                        <button id="pt3InfoBtn">Get Info</button>
-                                        <button id="pt3clearBtn">Clear</button>
-                                        <div class="bg-white-rounded mt-3">
+                                    <div class="bg-gray-rounded d-flex flex-column justify-content-center">
+                                        <div class="stateStuff mb-3">
+                                            <label for="stateInput" class="w-50 start">State:</label>
+                                            <input type="text" id="stateInput" class="w-50">
+                                        </div>
+                                        <div class="btn-group justify-content-center">
+                                            <button id="pt3InfoBtn" class="btn-class-only">Get Info</button>
+                                            <button id="pt3clearBtn" class="btn-class-only ms-2">Clear</button>
+                                        </div>
+                                        <div class="bg-white-rounded mt-3" id="textArea">
                                             <!-- Text of census data goes here -->
                                             Information to be displayed here.
                                         </div>
@@ -334,6 +338,10 @@
             const userInput = stateInput.value.toLowerCase();
             let stateInfo = "";
 
+            if (userInput == "" ) {
+                stateInfo = `Please enter a state name or abbreviation.`
+            }
+
             for (const state of censusData) {
                 const abbreviation = state[0].toLowerCase();
                 const fullName = state[1].toLowerCase();
@@ -347,9 +355,11 @@
 
             if (stateInfo) {
                 // Display state information
+                $('#textArea').show()
                 resultArea.innerHTML = stateInfo;
             } else {
                 const availableStates = censusData.map((state) => state[1]).join(", ");
+                $('#textArea').show()        
                 resultArea.innerHTML = `Sorry, we do not have information about this state! Try for the states found in our database: <br><br> ${availableStates}`;
             }
         });
@@ -359,6 +369,7 @@
             // Clear the input field and result area
             stateInput.value = "";
             resultArea.innerHTML = "";
+            $('#textArea').hide()
         });
 
     </script>
