@@ -23,18 +23,21 @@
       <script src="scripts/hw3.js"></script>
       <style>
         /* Style for your form */
+        .bg-gray-rounded,
         .form-container {
             background-color: #f3f5f9; /* Set the background color */
             padding: 20px;
             border-radius: 10px; /* Add rounded corners to the form */
         }
 
+        .bg-gray-rounded,
         .form-container form {
             max-width: 600px;
             margin: auto;
             text-align: center;
         }
 
+        .bg-gray-rounded label,
         .form-container label {
             font-weight: bold;
         }
@@ -68,6 +71,14 @@
 
         .form-container button:hover {
             background-color: #181d3b; /* Change background color on hover */
+        }
+
+        .label-extended{
+            width: 100%;
+        }
+
+        .w-max-content {
+            width: max-content;
         }
 
       </style>
@@ -149,7 +160,7 @@
                                 <!-- Overview Tab -->
                                 <div id="overview" class="overview hwParts">
                                     <h5 class="header text-center">Overview</h5>
-                                    <ul>
+                                    <ul class="w-max-content bg-gray-rounded text-start">
                                         <li>Part 1 - Form validations & submissons</li>
                                         <li>Part 2 - Event handlers</li>
                                         <li>
@@ -157,6 +168,7 @@
                                         </li>
                                     </ul>
                                 </div>
+                                
                                 <!-- Part 1 Tab -->
                                 <div id="pt1" class="hwParts">
                                     <h5 class="header text-center">
@@ -224,28 +236,32 @@
                                 <!-- Part 2 Tab -->
                                 <div id="pt2" class="hwParts">
                                     <h5 class="header text-center">Event handlers</h5>
-                                    <p class="text-center form-container text-black">
+                                    <p class="text-center bg-gray-rounded text-black">
                                         Code a script that opens a selected website from the pulldown menu.
                                         These websites should open in a new tab/window.
                                     </p>
                                     <h5 class="header text-center">Part 2</h5>
-                                    <h6 class="text-center">Learn about Compound Interest</h6>
+                                    <div class="bg-gray-rounded flex-column">
+                                        <div class="container mb-3 d-flex">
+                                            <label for="onChageSelect" class="label-extended">Choose your destination: </label>
+                                            <select id="onChageSelect" class="w-50">
+                                                <option value="" disabled selected>Select</option>
+                                            </select>
+                                        </div>
+                                        <div class="container mb-3 d-flex">
+                                            <label for="onClickSelect" class="label-extended">Choose your destination: </label>
+                                            <select id="onClickSelect"  class="w-50">
+                                                <option value="" disabled selected>Select</option>
+                                            </select>
+                                        </div>
+                                        <button class="btn-class-only-2 w-50">Go</button>
+                                    </div>
                                 </div>
                                 <!-- Part 3 Tab -->
                                 <div id="pt3" class="hwParts">
                                     <h5 class="header text-center">
                                         Two-dimensional arrays
                                     </h5>
-                                    <div class="extra-credit d-flex justify-content-between" id="squareForm">
-                                        <label class="align-self-center" for="numberInput">Enter a number between 2 and 10</label>
-                                        <input class="square-num-input" type="number" id="numberInput" min="2" max="10">
-                                        <div class="d-flex">
-                                            <button class="btn-class-only-2" type="button" id="generate">Generate</button>
-                                            <button class="btn-class-only-2" type="reset" id="reset">Reset</button>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div id="squareResults" class="squareResults mt-3"></div>
                                 </div>
                             </div>
                         </div>
