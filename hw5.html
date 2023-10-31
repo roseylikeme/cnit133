@@ -209,11 +209,6 @@
                                             <div class="movies d-flex">
                                                 <select id="movieType" name="movieType" class="d-flex flex-fill" required>
                                                     <option value="" disabled selected>Select Movie Type</option>
-                                                    <option value="Action">Action</option>
-                                                    <option value="Comedy">Comedy</option>
-                                                    <option value="Drama">Drama</option>
-                                                    <option value="Documentary">Documentary</option>
-                                                    <option value="ScienceFiction">Science Fiction</option>
                                                 </select>
                                             </div>
                                             <div class="container text-center mt-3">
@@ -265,6 +260,16 @@
     <script>
         const form = document.getElementById("hw5pt1form");
         const outputMessage = document.getElementById("output-message");
+
+        const movieTypes = ["Action", "Comedy", "Drama", "Documentary", "Science Fiction"];
+        const selectElement = document.getElementById("movieType");
+
+        movieTypes.forEach((type) => {
+            const option = document.createElement("option");
+            option.value = type;
+            option.text = type;
+            selectElement.appendChild(option);
+        });
 
         form.addEventListener("submit", function (e) {
             e.preventDefault(); // Prevent the default form submission
