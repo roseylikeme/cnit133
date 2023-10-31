@@ -6,18 +6,79 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Homework 5 for JavaScript, jQuery, AJAX course at CCSF">
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <meta name="description" content="Homework 3 for JavaScript, jQuery, AJAX course at CCSF">
+      <!-- Styles -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"> <!--!Note this is important rose LOL-->
+      <link rel="stylesheet" href="css/style.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+      <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+      <!-- Scripts -->
+      <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+      <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
+      <script src="scripts/sharedScript.js"></script>
+      <script src="scripts/hw3.js"></script>
+      <style>
+        /* Style for your form */
+        .form-container {
+            background-color: #f3f5f9; /* Set the background color */
+            padding: 20px;
+            border-radius: 10px; /* Add rounded corners to the form */
+        }
+
+        .form-container form {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .form-container label {
+            font-weight: bold;
+        }
+
+        .form-container input[type="text"],
+        .form-container select {
+            width: 100%; /* Make text inputs and select elements expand to full width */
+            padding: 5px; /* Add some padding for better appearance */
+            border: 1px solid #ccc; /* Add a border */
+            border-radius: 5px; /* Add rounded corners */
+        }
+
+        .form-container input[type="radio"],
+        .form-container input[type="checkbox"] {
+            display: block; /* Stack radio buttons and checkboxes vertically */
+        }
+
+        .form-container fieldset {
+            border: none; /* Remove fieldset border */
+        }
+
+        .form-container button {
+            background-color: #ae4646; /* Set the button background color */
+            color: #fff; /* Set text color */
+            padding: 10px 20px; /* Add padding for button size */
+            border: none;
+            border-radius: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #181d3b; /* Change background color on hover */
+        }
+
+      </style>
 </head>
 
 <body>
     <main>
         <div class="wrapper">
-            <div class="sidebar">
-                <h2 class="fw-bolder">Rose</h2>
+            <!-- Sidebar Start -->
+            <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
                 <div class="toc-list-wrapper">
                     <ul class="sidebar-list">
                         <li class="sidebar-list-item">
@@ -26,7 +87,7 @@
                         <li class="sidebar-list-item">
                             <a href="aboutme.html">About me</a>
                         </li>
-                        <li class="sidebar-list-item ">
+                        <li class="sidebar-list-item">
                             <a href="hw2.html">Homework 2</a>
                         </li>
                         <li class="sidebar-list-item">
@@ -53,22 +114,187 @@
                     <a href="https://www.linkedin.com/in/roselene-g/"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://github.com/roseylikeme"><i class="fab fa-github"></i></a>
                     <a href="https://youtube.com/@roselene"><i class="fab fa-youtube"></i></a>
-                </div>
             </div>
+            </div>
+            <div id="main" class="main_content">
+                <button class="openbtn" onclick="openNav()">☰</button>
+                <header>
+                    <div>
+                        <div class="hwrapper">
+                            <h1 class="main-heading">&nbsp;</h1>
+                        </div>
+                    </div>
+                </header>
+                <div class="d-flex flex-column">
+                    <div class="toc-wrapper">
+                        <div class="toc-header">
+                            <h1 class="toc-heading">H5 - Arrays</h1>
+                        </div>
+                        <div class="toc-list-wrapper">
+                            <div class="toc-list">
+                                <div class="container justify-content-center addGap d-flex">
+                                    <button class="btn-class activeSubMenuButton" data-target="overview">
+                                        Overview
+                                    </button>
+                                    <button class="btn-class" data-target="pt1">
+                                        Part One
+                                    </button>
+                                    <button class="btn-class" data-target="pt2">
+                                        Part Two
+                                    </button>
+                                    <button class="btn-class" data-target="pt3">
+                                        Part Three
+                                    </button>
+                                </div>
+                                <!-- Overview Tab -->
+                                <div id="overview" class="overview hwParts">
+                                    <h5 class="header text-center">Overview</h5>
+                                    <ul>
+                                        <li>Part 1 - Form validations & submissons</li>
+                                        <li>Part 2 - Event handlers</li>
+                                        <li>
+                                            Part 3 - Two-dimensional arrays
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Part 1 Tab -->
+                                <div id="pt1" class="hwParts">
+                                    <h5 class="header text-center">
+                                        Form validations & submissons
+                                    </h5>
+                                    <div class="form-container d-flex justify-content-center">
+                                        <form id="hw5pt1form">
+                                            <div class="nameGroup mb-3">
+                                                <label for="userName">Name:</label>
+                                                <input id="userName" type="text" max="10">
+                                            </div>
+                                            
+                                            <div class="ageGroup d-flex mb-3">
+                                                <label for="ageGroup" class="fw-medium">Age:</label>
+                                                <fieldset>
+                                                    <div class="d-flex">
+                                                        <input type="radio" id="ageGroup1" name="ageGroup" value="under21" required>
+                                                        <label for="ageGroup1">Under 21</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <input type="radio" id="ageGroup2" name="ageGroup" value="21to50" required>
+                                                        <label for="ageGroup2">21 to 50</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <input type="radio" id="ageGroup3" name="ageGroup" value="over50" required>
+                                                        <label for="ageGroup3">Over 50</label>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
 
-    <div class="main_content">
-        <header>
-        <div>
-            <div class="hwrapper">
-                <div class="header-container">
-                    <h1 class="main-heading">HW 5 Coming Soon</h1>
+                                            <div class="browsers d-flex mb-3">
+                                                    <label for="browsers" class="fw-medium">Browsers:</label>
+                                                <fieldset>
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" id="firefox" name="browsers" value="Firefox">
+                                                        <label for="firefox">Firefox</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" id="edge" name="browsers" value="Edge">
+                                                        <label for="edge">Edge</label>
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <input type="checkbox" id="chrome" name="browsers" value="Chrome">
+                                                        <label for="chrome">Chrome</label>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+
+                                            <label for="movieType">Movie Preference:</label>
+                                            <div class="movies d-flex">
+                                                <select id="movieType" name="movieType" class="d-flex flex-fill" required>
+                                                    <option value="" disabled selected>Select Movie Type</option>
+                                                    <option value="Action">Action</option>
+                                                    <option value="Comedy">Comedy</option>
+                                                    <option value="Drama">Drama</option>
+                                                    <option value="Documentary">Documentary</option>
+                                                    <option value="ScienceFiction">Science Fiction</option>
+                                                </select>
+                                            </div>
+                                            <div class="container text-center mt-3">
+                                                <button type="submit" class="btn-class-only">Submit</button>
+                                                <button type="reset" class="btn-class-only">Clear</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="output-area text-center mt-4">
+                                        <p id="output-message"></p>
+                                    </div>
+                                </div>
+                                <!-- Part 2 Tab -->
+                                <div id="pt2" class="hwParts">
+                                    <h5 class="header text-center">Event handlers</h5>
+                                    <p class="text-center">
+                                        Create a web page to show to interested clients how the
+                                        compound interest works.
+                                    </p>
+                                    <h5 class="header text-center">Part 2</h5>
+                                    <h6 class="text-center">Learn about Compound Interest</h6>
+                                </div>
+                                <!-- Part 3 Tab -->
+                                <div id="pt3" class="hwParts">
+                                    <h5 class="header text-center">
+                                        Two-dimensional arrays
+                                    </h5>
+                                    <div class="extra-credit d-flex justify-content-between" id="squareForm">
+                                        <label class="align-self-center" for="numberInput">Enter a number between 2 and 10</label>
+                                        <input class="square-num-input" type="number" id="numberInput" min="2" max="10">
+                                        <div class="d-flex">
+                                            <button class="btn-class-only-2" type="button" id="generate">Generate</button>
+                                            <button class="btn-class-only-2" type="reset" id="reset">Reset</button>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div id="squareResults" class="squareResults mt-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toc-wrapper back">
+                        <a href="index.html" class="btn-class-only text-white-50">Back to Home</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
-    </div>
-    </div>
     </main>
+    <script>
+        const form = document.getElementById("hw5pt1form");
+        const outputMessage = document.getElementById("output-message");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            // Retrieve form data
+            const userName = document.getElementById("userName").value;
+            const ageGroup = document.querySelector("input[name='ageGroup']:checked");
+            const browsers = document.querySelectorAll("input[name='browsers']:checked");
+            const movieType = document.getElementById("movieType").value;
+
+            // Check if all required fields are filled
+            if (userName.trim() === "") {
+                showMessage("Please enter your name.");
+            } else if (!ageGroup) {
+                showMessage("Please select your age group.");
+            } else if (browsers.length === 0) {
+                showMessage("Please select at least one browser.");
+            } else if (movieType === "") {
+                showMessage("Please select your movie preference.");
+            } else {
+                showMessage("Thanks, your data was submitted!");
+                form.reset(); // Clear the form
+            }
+        });
+
+        // Function to display the message in the output area
+        function showMessage(message) {
+            outputMessage.textContent = message;
+        }
+    </script>
 </body>
 
 </html>
