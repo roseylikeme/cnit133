@@ -117,41 +117,45 @@
                                         <form id="hw5pt1form">
                                             <div class="nameGroup mb-3">
                                                 <label for="userName">Name:</label>
-                                                <input id="userName" type="text" max="10">
+                                                <input id="userName" type="text">
                                             </div>
                                             
                                             <div class="ageGroup d-flex mb-3">
-                                                <label for="ageGroup" class="fw-medium">Age:</label>
-                                                <fieldset>
-                                                    <div class="d-flex">
-                                                        <input type="radio" id="ageGroup1" name="ageGroup" value="under21" required>
-                                                        <label for="ageGroup1">Under 21</label>
-                                                    </div>
-                                                    <div class="d-flex">
-                                                        <input type="radio" id="ageGroup2" name="ageGroup" value="21to50" required>
-                                                        <label for="ageGroup2">21 to 50</label>
-                                                    </div>
-                                                    <div class="d-flex">
-                                                        <input type="radio" id="ageGroup3" name="ageGroup" value="over50" required>
-                                                        <label for="ageGroup3">Over 50</label>
+                                                <fieldset class="container d-flex justify-content-center">
+                                                    <legend class="hw5-legend">Age:</legend>
+                                                    <div class="d-right">
+                                                        <div class="d-flex">
+                                                            <input type="radio" id="ageGroup1" name="ageGroup" value="under21" required>
+                                                            <label for="ageGroup1">Under 21</label>
+                                                        </div>
+                                                        <div class="d-flex">
+                                                            <input type="radio" id="ageGroup2" name="ageGroup" value="21to50" required>
+                                                            <label for="ageGroup2">21 to 50</label>
+                                                        </div>
+                                                        <div class="d-flex">
+                                                            <input type="radio" id="ageGroup3" name="ageGroup" value="over50" required>
+                                                            <label for="ageGroup3">Over 50</label>
+                                                        </div>
                                                     </div>
                                                 </fieldset>
                                             </div>
 
                                             <div class="browsers d-flex mb-3">
-                                                    <label for="browsers" class="fw-medium">Browsers:</label>
-                                                <fieldset>
-                                                    <div class="d-flex">
-                                                        <input type="checkbox" id="firefox" name="browsers" value="Firefox">
-                                                        <label for="firefox">Firefox</label>
-                                                    </div>
-                                                    <div class="d-flex">
-                                                        <input type="checkbox" id="edge" name="browsers" value="Edge">
-                                                        <label for="edge">Edge</label>
-                                                    </div>
-                                                    <div class="d-flex">
-                                                        <input type="checkbox" id="chrome" name="browsers" value="Chrome">
-                                                        <label for="chrome">Chrome</label>
+                                                <fieldset class="container d-flex justify-content-center">
+                                                    <legend class="hw5-legend">Browsers:</legend>
+                                                    <div class="d-right">
+                                                        <div class="d-flex">
+                                                            <input type="checkbox" id="firefox" name="browsers" value="Firefox">
+                                                            <label for="firefox">Firefox</label>
+                                                        </div>
+                                                        <div class="d-flex">
+                                                            <input type="checkbox" id="edge" name="browsers" value="Edge">
+                                                            <label for="edge">Edge</label>
+                                                        </div>
+                                                        <div class="d-flex">
+                                                            <input type="checkbox" id="chrome" name="browsers" value="Chrome">
+                                                            <label for="chrome">Chrome</label>
+                                                        </div>
                                                     </div>
                                                 </fieldset>
                                             </div>
@@ -201,6 +205,21 @@
                                     <h5 class="header text-center">
                                         Two-dimensional arrays
                                     </h5>
+                                    <p class="text-center bg-gray-rounded text-black">
+                                        Enter full name or abbreviation of state in text box to get
+                                        information of that state.
+                                    </p>
+                                    <h5 class="header text-center">Part 3</h5>
+                                    <div class="bg-gray-rounded">
+                                        <label for="stateInput">State:</label>
+                                        <input class="w-25" type="text" id="stateInput">
+                                        <button id="pt3InfoBtn">Get Info</button>
+                                        <button id="pt3clearBtn">Clear</button>
+                                        <div class="bg-white-rounded mt-3">
+                                            <!-- Text of census data goes here -->
+                                            Information to be displayed here.
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -293,6 +312,55 @@
                 window.open(selectedUrl, "_blank");
             }
         })
+
+        // Part 3
+        const stateInput = document.getElementById("stateInput");
+        const pt3InfoBtn = document.getElementById("pt3InfoBtn");
+        const pt3ClearBtn = document.getElementById("pt3clearBtn");
+        const resultArea = document.querySelector(".bg-white-rounded");
+
+        const censusData = [
+            ["AL", "Alabama", "Montgomery", "4,903,185"],
+            ["AK", "Alaska", "Juneau", "731,545"],
+            ["AZ", "Arizona", "Phoenix", "7,278,717"],
+            ["AR", "Arkansas", "Little Rock", "3,017,825"],
+            ["CA", "California", "Sacramento", "39,512,223"],
+            ["CO", "Colorado", "Denver", "5,758,736"],
+        ];
+
+        // Event listener for "Get Info" button
+        pt3InfoBtn.addEventListener("click", () => {
+            // Get user's input and convert it to lowercase for comparison
+            const userInput = stateInput.value.toLowerCase();
+            let stateInfo = "";
+
+            for (const state of censusData) {
+                const abbreviation = state[0].toLowerCase();
+                const fullName = state[1].toLowerCase();
+
+                if (userInput === abbreviation || userInput === fullName) {
+                    // Found a matching state
+                    stateInfo = `State: ${state[1]}<br>Capital: ${state[2]}<br>Population: ${state[3]}`;
+                    break;
+                }
+            }
+
+            if (stateInfo) {
+                // Display state information
+                resultArea.innerHTML = stateInfo;
+            } else {
+                const availableStates = censusData.map((state) => state[1]).join(", ");
+                resultArea.innerHTML = `Sorry, we do not have information about this state! Try for the states found in our database: <br><br> ${availableStates}`;
+            }
+        });
+
+        // Event listener for "Clear" button
+        pt3ClearBtn.addEventListener("click", () => {
+            // Clear the input field and result area
+            stateInput.value = "";
+            resultArea.innerHTML = "";
+        });
+
     </script>
 </body>
 
