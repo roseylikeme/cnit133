@@ -441,3 +441,62 @@ div.results p {
     text-align: center;
 }
   
+
+/* Style for your form */
+.bg-gray-rounded,
+.form-container {
+    background-color: #f3f5f9; /* Set the background color */
+    padding: 20px;
+    border-radius: 10px; /* Add rounded corners to the form */
+}
+
+.bg-gray-rounded,
+.form-container form {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+.bg-gray-rounded label,
+.form-container label {
+    font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container select {
+    width: 100%; /* Make text inputs and select elements expand to full width */
+    padding: 5px; /* Add some padding for better appearance */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Add rounded corners */
+}
+
+.form-container input[type="radio"],
+.form-container input[type="checkbox"] {
+    display: block; /* Stack radio buttons and checkboxes vertically */
+}
+
+.form-container fieldset {
+    border: none; /* Remove fieldset border */
+}
+
+.form-container button {
+    background-color: #ae4646; /* Set the button background color */
+    color: #fff; /* Set text color */
+    padding: 10px 20px; /* Add padding for button size */
+    border: none;
+    border-radius: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #181d3b; /* Change background color on hover */
+}
+
+.label-extended{
+    width: 100%;
+}
+
+.w-max-content {
+    width: max-content;
+}
