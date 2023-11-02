@@ -10,6 +10,8 @@ Homework 3: Functions
 
 Homework 4: Looping Statements • [Link to PR](https://github.com/roseylikeme/cnit133/pull/4)
 
+Homework 5: Arrays • [Link to PR](https://github.com/roseylikeme/cnit133/pull/6)
+
 ## CNIT 133M - Mobile Web w/HTML, CSS & JS-831
 
 Homework 1: About Me + jQuery Animation • [Link to PR](https://github.com/roseylikeme/cnit133/pull/3)
