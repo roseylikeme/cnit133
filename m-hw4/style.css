@@ -1,0 +1,52 @@
+body {
+    background-color: white;
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.d-flex {
+    display: flex;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    border-radius: 2rem;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+select, button {
+    margin-top: 10px;
+}
+
+#userNameParagraph {
+    font-weight: bold;
+}
+
+#content-container {
+    border: 3px solid rgba(0, 0, 0, 0.1); /* Transparent border */
+    padding: 2rem;
+    border-radius: 3rem; /* Rounded corners */
+    overflow: hidden; /* Ensure border doesn't affect the layout */
+    background-color: white;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mt-3 {
+    margin-top: 3rem;
+}
