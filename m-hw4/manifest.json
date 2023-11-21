@@ -1,0 +1,29 @@
+{
+    "name": "My PWA",
+    "short_name": "PWA",
+    "description": "A simple Progressive Web Application",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#333333",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "splash_pages": null,
+    "background_images": [
+        {
+            "src": "lightblue.jpg",
+            "sizes": "2444×1636",
+            "type": "image/jpg"
+        },
+        {
+            "src": "lightgold.jpg",
+            "sizes": "612×408",
+            "type": "image/jpg"
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400;500;600" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <title>My PWA</title>
+</head>
+
+<body>
+    <header>
+        <h1>Progressive Web Application</h1>
+    </header>
+
+    <main>
+        <div id="content-container">
+            <h3>Main characteristics of a PWA:</h3>
+            <ol>
+                <li>Reliability: PWAs should load quickly and work offline.</li>
+                <li>Fast: Smooth and responsive user experience.</li>
+                <li>Engaging: Feel like a natural app on the device with immersive user experience.</li>
+            </ol>
+    
+            <div class="container d-flex">
+                <p>Select background color:</p>
+                <select id="bgSelector">
+                    <option value="lightblue">Light Blue</option>
+                    <option value="lightgold">Light Gold</option>
+                </select>
+        
+                
+            </div>
+
+            <div class="div mt-1">
+                <label for="nameInput">Your Name:</label>
+                <input type="text" id="nameInput" placeholder="Type your name">
+        
+                <p id="userNameParagraph">Welcome, <span id="userName"></span>!</p>
+            </div>
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
