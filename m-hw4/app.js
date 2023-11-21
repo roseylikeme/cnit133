@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.getElementById("bgSelector").addEventListener("change", function () {
+    // after color has been selected, disable option
+    this.options[0].disabled = true;
+
     var selectedColor = document.getElementById("bgSelector").value;
     var body = document.body;
 

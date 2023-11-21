@@ -13,6 +13,16 @@ body {
     display: flex;
 }
 
+.a-baseline {
+    display: flex;
+    align-items: baseline;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+
 header {
     background-color: #333;
     color: white;
@@ -25,10 +35,6 @@ main {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-}
-
-select, button {
-    margin-top: 10px;
 }
 
 #userNameParagraph {
@@ -49,4 +55,8 @@ select, button {
 
 .mt-3 {
     margin-top: 3rem;
+}
+
+.ml-1 {
+    margin-left: 1rem;
 }
