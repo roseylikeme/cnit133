@@ -1,57 +1,44 @@
-
-
-// function clearInputsAndError() {
-//     $('#hwAverage, #midtermExam, #finalExam, #participation').val('');
-//     $('#results').hide();
-//     $('.btn-class').removeClass('activeSubMenuButton');
-// }
-
-// function checkValidInput() {
-//     const inputValues = {
-//         hwAverage: parseInt($('#hwAverage').val()),
-//         midtermExam: parseInt($('#midtermExam').val()),
-//         finalExam: parseInt($('#finalExam').val()),
-//         participation: parseInt($('#participation').val())
-//     };
-
-//     const isValid = Object.values(inputValues).every(val => !isNaN(val) && val >= 0 && val <= 100);
-
-//     if (isValid) {
-//         calculateGradeAverage(inputValues);
-//     } else {
-//         $('#results').text('Please enter valid numbers between 0 and 100').show();
-//     }
-// }
-
-// function calculateGradeAverage(inputValues) {
-//     const finalGradeAverage = Math.round((inputValues.hwAverage * 0.5) + (inputValues.midtermExam * 0.2) + (inputValues.finalExam * 0.2) + (inputValues.participation * 0.1));
-
-//     const gradeRanges = {
-//         A: { min: 90, max: 100 },
-//         B: { min: 80, max: 89 },
-//         C: { min: 70, max: 79 },
-//         D: { min: 60, max: 69 },
-//         F: { min: 0, max: 59 }
-//     };
-
-//     let letterGrade = '';
-
-//     for (const grade in gradeRanges) {
-//         if (finalGradeAverage >= gradeRanges[grade].min) {
-//             letterGrade = grade;
-//             break;
-//         }
-//     }
-
-//     const retakeMessage = (letterGrade === 'D' || letterGrade === 'F') ? '\nStudent must retake the course' : '';
-
-//     $('#results').css('white-space', 'pre-line').text(
-//         'Your grade average is ' + finalGradeAverage +
-//         '\nLetter Grade: ' + letterGrade + retakeMessage
-//     ).show();
-// }
-
-// function calculateAndDisplayResult() {
-//     checkValidInput();
-// }
-
+$(document).ready(function () {
+    document.getElementById("hw6pt1form").addEventListener("submit", function (e) {
+        e.preventDefault();
+    
+        const userNumberInput = parseFloat(document.getElementById("userNumber").value);
+    
+        if (isNaN(userNumberInput) || userNumberInput.toFixed(4) !== userNumberInput.toString()) {
+            showMessage("Invalid number. Please enter a number with at least 4 decimal places.");
+        } else {
+            const roundedInteger = Math.round(userNumberInput);
+            const squareRootInteger = Math.round(Math.sqrt(userNumberInput));
+            const roundedTenths = Math.round(userNumberInput * 10) / 10;
+            const roundedHundredths = Math.round(userNumberInput * 100) / 100;
+            const roundedThousandths = Math.round(userNumberInput * 1000) / 1000;
+    
+            showMessage(`
+                <div class="bg-gray-rounded text-center mt-3 p-3">
+                    <p>Original Number: ${userNumberInput}</p>
+                    <p>Rounded Integer: ${roundedInteger}</p>
+                    <p>Square Root (Rounded): ${squareRootInteger}</p>
+                    <p>Rounded to Tenths: ${roundedTenths}</p>
+                    <p>Rounded to Hundredths: ${roundedHundredths}</p>
+                    <p>Rounded to Thousandths: ${roundedThousandths}</p>
+                </div>
+            `);
+        }
+    });
+    
+    document.getElementById("hw6pt1form").addEventListener("reset", function () {
+        // Clear user input and hide the message
+        document.getElementById("userNumber").value = "";
+        hideMessage();
+    });
+    
+    function showMessage(message) {
+        const outputArea = document.getElementById("output-message");
+        outputArea.innerHTML = message;
+        outputArea.style.display = "block";
+    }
+    
+    function hideMessage() {
+        document.getElementById("output-message").style.display = "none";
+    }
+});
