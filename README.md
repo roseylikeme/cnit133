@@ -12,6 +12,8 @@ Homework 4: Looping Statements • [Link to PR](https://github.com/roseylikeme/c
 
 Homework 5: Arrays • [Link to PR](https://github.com/roseylikeme/cnit133/pull/6)
 
+Homework 6: Objects • [Link to PR](https://github.com/roseylikeme/cnit133/pull/8)
+
 ## CNIT 133M - Mobile Web w/HTML, CSS & JS-831
 
 Homework 1: About Me + jQuery Animation • [Link to PR](https://github.com/roseylikeme/cnit133/pull/3)
