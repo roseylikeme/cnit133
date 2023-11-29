@@ -17,8 +17,9 @@
           integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
       <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
       <!-- Scripts -->
-      <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
       <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
       <script src="scripts/sharedScript.js"></script>
       <script src="scripts/hw6.js"></script>
 </head>
@@ -103,7 +104,7 @@
                                         <li>Part 1 - Math</li>
                                         <li>Part 2 - Event handlers</li>
                                         <li>
-                                            Part 3 - Two-dimensional arrays
+                                            Part 3 - Regular Expressions
                                         </li>
                                     </ul>
                                 </div>
@@ -132,50 +133,61 @@
                                 </div>
                                 <!-- Part 2 Tab -->
                                 <div id="pt2" class="hwParts">
-                                    <h5 class="header text-center">Event handlers</h5>
+                                    <h5 class="header text-center">
+                                        Search Character
+                                    </h5>
                                     <p class="text-center bg-gray-rounded text-black">
-                                        Code a script that opens a selected website from the pulldown menu.
-                                        These websites should open in a new tab/window.
+                                        Enter whatever you want in the text area or paste some content. 
+                                        Then, enter a character to find how many times it occurs in the text.
                                     </p>
                                     <h5 class="header text-center">Part 2</h5>
-                                    <div class="bg-gray-rounded flex-column">
-                                        <div class="container mb-3 d-flex">
-                                            <label for="onChageSelect" class="label-extended">Choose your destination: </label>
-                                            <select id="onChageSelect" class="w-50">
-                                                <option value="" disabled selected>Select</option>
-                                            </select>
-                                        </div>
-                                        <div class="container mb-3 d-flex">
-                                            <label for="onClickSelect" class="label-extended">Choose your destination: </label>
-                                            <select id="onClickSelect"  class="w-50">
-                                                <option value="" disabled selected>Select</option>
-                                            </select>
-                                        </div>
-                                        <button id="onClickVisitButton" class="btn-class-only-2 w-50">Go</button>
+                                    
+                                    <div class="form-container d-flex justify-content-center">
+                                        <form id="hw6pt2form">
+                                            <div class="container mb-3 d-flex flex-column">
+                                                <label for="longContent" class="label-extended">Text:</label>
+                                                <textarea id="longContent" name="longContent" rows="4" required></textarea>
+                                            </div>
+                                            <div class="container mb-3 d-flex">
+                                                <label for="searchChar" class="label-extended">Search Character:</label>
+                                                <input type="text" id="searchChar" name="searchChar" maxlength="1">
+                                            </div>
+                                            <div class="container text-center mt-3">
+                                                <button type="submit" class="btn-class-only">Search</button>
+                                                <button type="reset" class="btn-class-only">Clear</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    
+                                    <div class="output-area text-center mt-4">
+                                        <p id="output-message-pt2"></p>
                                     </div>
                                 </div>
                                 <!-- Part 3 Tab -->
                                 <div id="pt3" class="hwParts">
                                     <h5 class="header text-center">
-                                        Two-dimensional arrays
+                                        Regular Expressions
                                     </h5>
                                     <p class="text-center bg-gray-rounded text-black">
-                                        Enter full name or abbreviation of state in text box to get
-                                        information of that state.
+                                        Enter phone number in the following format: (xxx) xxx-xxxx
                                     </p>
                                     <h5 class="header text-center">Part 3</h5>
                                     <div class="bg-gray-rounded d-flex flex-column justify-content-center">
-                                        <div class="stateStuff mb-3">
-                                            <label for="stateInput" class="w-50 start">State:</label>
-                                            <input type="text" id="stateInput" class="w-50">
+                                        <div class="mb-3">
+                                            <label for="stateInput" class="w-50 start">Phone Number:</label>
+                                            <input type="text" id="phoneNumberInput" class="w-50 text-center" placeholder="(123) 456-7890" maxlength="14">
+                                            <div class="d-flex justify-content-center mt-1">
+                                                <input type="text" id="areaCodeOutput" class="w-15 text-center" readonly>
+                                                <input type="text" id="firstThreeOutput" class="w-15 text-center" readonly>
+                                                <input type="text" id="lastFourOutput" class="w-15 text-center" readonly>
+                                            </div>
                                         </div>
                                         <div class="btn-group justify-content-center">
-                                            <button id="pt3InfoBtn" class="btn-class-only">Get Info</button>
-                                            <button id="pt3clearBtn" class="btn-class-only ms-2">Clear</button>
+                                            <button id="pt3ExtractBtn" class="btn-class-only">Extract</button>
+                                            <button id="pt3ClearBtn" class="btn-class-only ms-2">Clear</button>
                                         </div>
-                                        <div class="bg-white-rounded mt-3" id="textArea">
-                                            <!-- Text of census data goes here -->
-                                            Information to be displayed here.
+                                        <div class="bg-white-rounded mt-3" id="textAreaPt3">
+                                            
                                         </div>
                                     </div>
                                 </div>
