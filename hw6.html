@@ -7,17 +7,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Homework 6 for JavaScript, jQuery, AJAX course at CCSF">
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+      <!-- Styles -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"> <!--!Note this is important rose LOL-->
+      <link rel="stylesheet" href="css/style.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+      <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+      <!-- Scripts -->
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+      <script src="scripts/sharedScript.js"></script>
+      <script src="scripts/hw6.js"></script>
 </head>
 
 <body>
     <main>
         <div class="wrapper">
-            <div class="sidebar">
-                <h2 class="fw-bolder">Rose</h2>
+            <!-- Sidebar Start -->
+            <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
                 <div class="toc-list-wrapper">
                     <ul class="sidebar-list">
                         <li class="sidebar-list-item">
@@ -26,7 +38,7 @@
                         <li class="sidebar-list-item">
                             <a href="aboutme.html">About me</a>
                         </li>
-                        <li class="sidebar-list-item ">
+                        <li class="sidebar-list-item">
                             <a href="hw2.html">Homework 2</a>
                         </li>
                         <li class="sidebar-list-item">
@@ -53,21 +65,141 @@
                     <a href="https://www.linkedin.com/in/roselene-g/"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://github.com/roseylikeme"><i class="fab fa-github"></i></a>
                     <a href="https://youtube.com/@roselene"><i class="fab fa-youtube"></i></a>
-                </div>
             </div>
-
-    <div class="main_content">
-        <header>
-        <div>
-            <div class="hwrapper">
-                <div class="header-container">
-                    <h1 class="main-heading">HW 6 Coming Soon</h1>
+            </div>
+            <div id="main" class="main_content">
+                <button class="openbtn" onclick="openNav()">☰</button>
+                <header>
+                    <div>
+                        <div class="hwrapper">
+                            <h1 class="main-heading">&nbsp;</h1>
+                        </div>
+                    </div>
+                </header>
+                <div>
+                    <div class="toc-wrapper">
+                        <div class="toc-header">
+                            <h1 class="toc-heading">H6 - Objects</h1>
+                        </div>
+                        <div class="toc-list-wrapper">
+                            <div class="toc-list">
+                                <div class="container justify-content-center addGap d-flex">
+                                    <button class="btn-class activeSubMenuButton" data-target="overview">
+                                        Overview
+                                    </button>
+                                    <button class="btn-class" data-target="pt1">
+                                        Part One
+                                    </button>
+                                    <button class="btn-class" data-target="pt2">
+                                        Part Two
+                                    </button>
+                                    <button class="btn-class" data-target="pt3">
+                                        Part Three
+                                    </button>
+                                </div>
+                                <!-- Overview Tab -->
+                                <div id="overview" class="overview hwParts">
+                                    <h5 class="header text-center">Overview</h5>
+                                    <ul class="w-max-content bg-gray-rounded text-start">
+                                        <li>Part 1 - Math</li>
+                                        <li>Part 2 - Event handlers</li>
+                                        <li>
+                                            Part 3 - Regular Expressions
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- Part 1 Tab -->
+                                <div id="pt1" class="hwParts">
+                                    <h5 class="header text-center">
+                                        Math Functions
+                                    </h5>
+                                    <div class="form-container d-flex justify-content-center">
+                                        <form id="hw6pt1form">
+                                            <div class="container mb-3 d-flex">
+                                                <label for="userNumber" class="label-extended">Enter a number with atleast 4 decimals </label>
+                                                <input type="text" id="userNumber" name="userNumber" required pattern="\d+(\.\d{1,4})?">
+                                            </div>
+                
+                                            <div class="container text-center mt-3">
+                                                <button type="submit" class="btn-class-only">Submit</button>
+                                                <button type="reset" class="btn-class-only">Clear</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="output-area text-center mt-4">
+                                        <p id="output-message"></p>
+                                    </div>
+                                </div>
+                                <!-- Part 2 Tab -->
+                                <div id="pt2" class="hwParts">
+                                    <h5 class="header text-center">
+                                        Search Character
+                                    </h5>
+                                    <p class="text-center bg-gray-rounded text-black">
+                                        Enter whatever you want in the text area or paste some content. 
+                                        Then, enter a character to find how many times it occurs in the text.
+                                    </p>
+                                    <h5 class="header text-center">Part 2</h5>
+                                    
+                                    <div class="form-container d-flex justify-content-center">
+                                        <form id="hw6pt2form">
+                                            <div class="container mb-3 d-flex flex-column">
+                                                <label for="longContent" class="label-extended">Text:</label>
+                                                <textarea id="longContent" name="longContent" rows="4" required></textarea>
+                                            </div>
+                                            <div class="container mb-3 d-flex">
+                                                <label for="searchChar" class="label-extended">Search Character:</label>
+                                                <input type="text" id="searchChar" name="searchChar" maxlength="1">
+                                            </div>
+                                            <div class="container text-center mt-3">
+                                                <button type="submit" class="btn-class-only">Search</button>
+                                                <button type="reset" class="btn-class-only">Clear</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    
+                                    <div class="output-area text-center mt-4">
+                                        <p id="output-message-pt2"></p>
+                                    </div>
+                                </div>
+                                <!-- Part 3 Tab -->
+                                <div id="pt3" class="hwParts">
+                                    <h5 class="header text-center">
+                                        Regular Expressions
+                                    </h5>
+                                    <p class="text-center bg-gray-rounded text-black">
+                                        Enter phone number in the following format: (xxx) xxx-xxxx
+                                    </p>
+                                    <h5 class="header text-center">Part 3</h5>
+                                    <div class="bg-gray-rounded d-flex flex-column justify-content-center">
+                                        <div class="mb-3">
+                                            <label for="stateInput" class="w-50 start">Phone Number:</label>
+                                            <input type="text" id="phoneNumberInput" class="w-50 text-center" placeholder="(123) 456-7890" maxlength="14">
+                                            <div class="d-flex justify-content-center mt-1">
+                                                <input type="text" id="areaCodeOutput" class="w-15 text-center" readonly>
+                                                <input type="text" id="firstThreeOutput" class="w-15 text-center" readonly>
+                                                <input type="text" id="lastFourOutput" class="w-15 text-center" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="btn-group justify-content-center">
+                                            <button id="pt3ExtractBtn" class="btn-class-only">Extract</button>
+                                            <button id="pt3ClearBtn" class="btn-class-only ms-2">Clear</button>
+                                        </div>
+                                        <div class="bg-white-rounded mt-3" id="textAreaPt3">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toc-wrapper back text-center">
+                        <a href="index.html" class="btn-class-only text-white-50">Back to Home</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
-    </div>
-    </div>
     </main>
 </body>
 
