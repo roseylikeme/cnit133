@@ -21,7 +21,7 @@
       <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
       <script src="scripts/sharedScript.js"></script>
-      <!-- <script src="scripts/hw7.js"></script> -->
+      <script src="scripts/hw7.js"></script>
 </head>
 
 <body>
@@ -108,9 +108,9 @@
                                     <h5 class="header text-center">
                                         Styles
                                     </h5>
-                                    <div class="text-center bg-gray-rounded text-black">
-                                        <p>Style this page by selecting a:</p>
-                                        <p>new background color</p>
+                                    <div id="divToApplyStylesTo" class="d-flex flex-column justify-content-center align-items-center bg-gray-rounded text-black">
+                                        <p>Style this part of the page by selecting:</p>
+                                        <p>a new background color</p>
                                         <p>or new font style</p>
                                     </div>
                                     <h5 class="header text-center">
@@ -118,14 +118,33 @@
                                     </h5>
                                     <div class="form-container d-flex justify-content-center">
                                         <form id="hw6pt1form">
-                                            <div class="container mb-3 d-flex align-items-center">
-                                                <label for="userNumber" class="label-extended">Background</label>
-                                                <input type="text" id="userNumber" name="userNumber" required pattern="\d+(\.\d{1,4})?">
+                                            <div class="container mb-3 d-flex flex-column align-items-center">
+                                                <label id="legendRadioBtns" class="label-extended">Select a background color: </label>
+                                                <div class="custom-radios d-flex w-50 mt-1" id="colorSwatch">
+                                                    <!-- dynamically filled -->
+                                                </div>
+                                                <label id="checkboxes" class="mt-3">Select a font style:</label>
+                                                <div id="checkboxContainer" class="w-50 text-center">
+                                                    <input type="checkbox" id="underlineCheckbox">
+                                                    <label for="underlineCheckbox" class="fw-normal">Underline</label>
+
+                                                    <input type="checkbox" id="boldCheckbox">
+                                                    <label for="boldCheckbox" class="fw-normal">Bold</label>
+
+                                                    <input type="checkbox" id="italicCheckbox">
+                                                    <label class="fw-normal" for="italicCheckbox">Italic</label>
+                                                </div>
+                                                <div class="fontSize mt-3">
+                                                    <label for="fontSizeSelect">Select Font Size: </label>
+                                                    <select id="fontSizeSelect">
+                                                        <option value="12">12px</option>
+                                                        <option value="16" selected>16px</option>
+                                                        <option value="18">18px</option>
+                                                        <option value="20">20px</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </form>
-                                    </div>
-                                    <div class="output-area text-center mt-4">
-                                        <p id="output-message"></p>
                                     </div>
                                 </div>
                                 <!-- Part 2 Tab -->
