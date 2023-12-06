@@ -14,6 +14,8 @@ Homework 5: Arrays • [Link to PR](https://github.com/roseylikeme/cnit133/pull/
 
 Homework 6: Objects • [Link to PR](https://github.com/roseylikeme/cnit133/pull/8)
 
+Homework 7: Object Model and Miscellaneous jQuery • [Link to PR](https://github.com/roseylikeme/cnit133/pull/9)
+
 ## CNIT 133M - Mobile Web w/HTML, CSS & JS-831
 
 Homework 1: About Me + jQuery Animation • [Link to PR](https://github.com/roseylikeme/cnit133/pull/3)
