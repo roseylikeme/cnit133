@@ -11,48 +11,45 @@ $(document).ready(function () {
 
     // Dynamically create radio buttons
     colors.forEach((color, index) => {
-    const radioBtn = document.createElement('input');
-    radioBtn.type = 'radio';
-    radioBtn.id = `color-${index + 1}`;
-    radioBtn.name = 'color';
-    radioBtn.value = `color-${index + 1}`;
+        const radioBtn = document.createElement('input');
+        radioBtn.type = 'radio';
+        radioBtn.id = `color-${index + 1}`;
+        radioBtn.name = 'color';
+        radioBtn.value = `color-${index + 1}`;
 
-    const label = document.createElement('label');
-    label.htmlFor = `color-${index + 1}`;
+        const label = document.createElement('label');
+        label.htmlFor = `color-${index + 1}`;
 
-    const span = document.createElement('span');
-    span.style.backgroundColor = color;
+        const span = document.createElement('span');
+        span.style.backgroundColor = color;
 
-    const img = document.createElement('img');
-    img.src = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg';
-    img.alt = 'Checked Icon';
+        const img = document.createElement('img');
+        img.src = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg';
+        img.alt = 'Checked Icon';
 
-    span.appendChild(img);
-    label.appendChild(span);
+        span.appendChild(img);
+        label.appendChild(span);
 
-    colorSwatch.appendChild(radioBtn);
-    colorSwatch.appendChild(label);
+        colorSwatch.appendChild(radioBtn);
+        colorSwatch.appendChild(label);
     });
 
     // Add event listener to update styles on radio button change
     colorSwatch.addEventListener('change', (event) => {
-    const selectedColor = event.target.value;
-    const divToApplyStyles = document.getElementById('divToApplyStylesTo');
-    
-    // Update background color based on the selected radio button
-    divToApplyStyles.style.backgroundColor = colors[selectedColor.split('-')[1] - 1];
+        const selectedColor = event.target.value;
+        const divToApplyStyles = document.getElementById('divToApplyStylesTo');
+        
+        // Update background color based on the selected radio button
+        divToApplyStyles.style.backgroundColor = colors[selectedColor.split('-')[1] - 1];
     });
 
-    // Use jQuery to handle change events
     $('#colorSwatch').on('change', 'input[type="radio"]', function (event) {
         const selectedColor = $(event.target).val();
         $('#divToApplyStylesTo').css('backgroundColor', colors[selectedColor.split('-')[1] - 1]);
     });
 
-    // Use jQuery to handle checkbox change events
     $('#underlineCheckbox, #boldCheckbox, #italicCheckbox').on('change', updateTextStyle);
 
-    // Use jQuery to handle select change event
     $('#fontSizeSelect').on('change', function () {
         const selectedFontSize = $(this).val();
         $('#divToApplyStylesTo').css('fontSize', `${selectedFontSize}px`);
