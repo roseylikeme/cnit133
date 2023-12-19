@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 2rem;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+
+      h2,
+      h3,
+      h4 {
+        color: #007bff;
+        margin-bottom: 10px;
+      }
+
+      hr {
+        border: 1px solid #ddd;
+        margin: 20px 0;
+      }
+
+      .container {
+        text-align: center;
+        margin: 20px;
+      }
+
+      .center-me {
+        text-align: center;
+        margin: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .flex-container {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      p {
+        margin-bottom: 10px;
+      }
+
+      ul,
+      ol {
+        margin-bottom: 10px;
+      }
+
+      a {
+        color: rgb(111, 136, 163)
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+  </style>
+  <body>
+    <div class="container d-flex flex-column">
+      <h1 class="text-center">CNIT 133 HW8 - AJAX Application</h1>
+      <a href="../index.html" class="center-me">Home</a>
+    </div>
+    <hr />
+    <button type="button" onclick="loadDoc()">Get CD collection</button>
+    <br /><br />
+    <table id="demo"></table>
+
+    <script>
+      function loadDoc() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+          myFunction(this);
+        };
+        xhttp.open("GET", "cd_catalog.xml");
+        xhttp.send();
+      }
+      function myFunction(xml) {
+        const xmlDoc = xml.responseXML;
+        const x = xmlDoc.getElementsByTagName("CD");
+        let table = "<tr><th>Artist</th><th>Title</th></tr>";
+        for (let i = 0; i < x.length; i++) {
+          table +=
+            "<tr><td>" +
+            x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+            "</td></tr>";
+        }
+        document.getElementById("demo").innerHTML = table;
+      }
+    </script>
+    <h2>Explanation of AJAX</h2>
+    <p>AJAX (Asynchronous JavaScript and XML) is a technique used to fetch and send data between 
+      a web browser and server without needing to reload the entire page.
+    </p>
+    <p>Within this application, there are two functions that are responsible for fetching and processing data.</p>
+    <p>When the button to grab the CD collection is clicked, 
+      an instance of XMLHttpRequest is created to make an asynchronous request 
+      for data from the "cd_catalog.xml" file. The response is handled by the xhttp.onload event, 
+      which triggers the myFunction(xml) function. In myFunction(xml), 
+      the XML data is processed to dynamically create an HTML table, and this table is displayed on the webpage without 
+      reloading the entire page.</p>
+    <h2>REST API</h2>
+    <h3>Random Dog</h3>
+    <p>The API that I chose to report on is Random Dog, an API service that does one simple thing:</p>
+    <ul>
+      <li>grab... dog pics</li>
+    </ul>
+    <p>How? Simple really. No need to go looking and hiding for access keys. All you need to do is play fetch with 🦴 the base URL at <a href="https://random.dog/" target="_blank">random dog's website</a> + /woof.json or /woof.</p>
+    <p>The best thing about this simple to use API is that it will cost you absolutely no fee to use this API.</p>
+    <p>It's such an easy way to keep retention on your pet friendly website.</p>
+    <p>How exactly do we grab these pics you may ask? If you visit the baseurl + woof.json, you will receive a json response contianing information about a randomly selected dog media.</p>
+    <h4>Parts of the endpoints</h4>
+    <p>This endpoint has two parts</p>
+    <ol>
+      <li>fileSizeBytes - gives img file size in bytes</li>
+      <li>url - the important part giving the direct link to random dog image</li>
+    </ol>
+    <h4>Query Parameters</h4>
+    <p>With this API, you can also add a query parameter called filter which would allow you to filter the types of media you'd accept on your page.</p>
+    <p>Example</p>
+    <ol>
+      <li>GET `random.dog/woof?filter=mp4,webm1` - return any dog media without mp4 or webm extension</li>
+      <li>GET `random.dog/woof?include=mp4,webm` - only return dogs with said extensions</li>
+    </ol>
+    <p>Developers can take advantage of these queries to help create a more personalized experience for users with a certain file type preference.</p>
+    <p>If I were to fully ... flesh... this out I'd probably use a dropdown menu for a filter to allow users to choose the types of media they'd like to see.</p>
+
+    <div class="container text-center">
+      <a href="https://roseylikeme.github.io/cats-and-facts/" class="button-link">
+        <button type="button">Demo Page</button>
+      </a>
+    </div>
+  </body>
+</html>
