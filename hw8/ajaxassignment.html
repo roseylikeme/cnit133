@@ -1,100 +1,104 @@
 <!DOCTYPE html>
-<html>
-  <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 2rem;
-        padding: 0;
-        background-color: #f4f4f4;
-        color: #333;
-      }
+<html lang="en">
+  <head>
+    <title>CNIT133 HW8 - AJAX </title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 2rem;
+          padding: 0;
+          background-color: #f4f4f4;
+          color: #333;
+        }
 
-      h2,
-      h3,
-      h4 {
-        color: #007bff;
-        margin-bottom: 10px;
-      }
+        h2,
+        h3,
+        h4 {
+          color: #007bff;
+          margin-bottom: 10px;
+        }
 
-      hr {
-        border: 1px solid #ddd;
-        margin: 20px 0;
-      }
+        hr {
+          border: 1px solid #ddd;
+          margin: 20px 0;
+        }
 
-      .container {
-        text-align: center;
-        margin: 20px;
-      }
+        .container {
+          text-align: center;
+          margin: 20px;
+        }
 
-      .center-me {
-        text-align: center;
-        margin: 10px;
-      }
+        .center-me {
+          text-align: center;
+          margin: 10px;
+        }
 
-      button {
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-      }
+        .button,
+        button {
+          padding: 10px 20px;
+          font-size: 16px;
+          cursor: pointer;
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+        }
 
-      button:hover {
-        background-color: #0056b3;
-      }
+        button:hover {
+          background-color: #0056b3;
+        }
 
-      table {
-        border: 1px solid black;
-        border-collapse: collapse;
-        width: 100%;
-        margin-top: 20px;
-      }
+        table {
+          border: 1px solid black;
+          border-collapse: collapse;
+          width: 100%;
+          margin-top: 20px;
+        }
 
-      th,
-      td {
-        border: 1px solid black;
-        padding: 8px;
-        text-align: left;
-      }
+        th,
+        td {
+          border: 1px solid black;
+          padding: 8px;
+          text-align: left;
+        }
 
-      .text-center {
-        text-align: center;
-      }
+        .text-center {
+          text-align: center;
+        }
 
-      .flex-container {
-        display: flex;
-        justify-content: space-around;
-      }
+        .flex-container {
+          display: flex;
+          justify-content: space-around;
+        }
 
-      p {
-        margin-bottom: 10px;
-      }
+        p {
+          margin-bottom: 10px;
+        }
 
-      ul,
-      ol {
-        margin-bottom: 10px;
-      }
+        ul,
+        ol {
+          margin-bottom: 10px;
+        }
 
-      a {
-        color: rgb(111, 136, 163)
-        text-decoration: none;
-      }
+        a {
+          color: rgb(111, 136, 163);
 
-      a:hover {
-        text-decoration: underline;
-      }
+        }
 
-  </style>
+        a:hover {
+          text-decoration: underline;
+        }
+
+    </style>
+  </head>
   <body>
     <div class="container d-flex flex-column">
       <h1 class="text-center">CNIT 133 HW8 - AJAX Application</h1>
       <a href="../index.html" class="center-me">Home</a>
     </div>
-    <hr />
+    <hr>
     <button type="button" onclick="loadDoc()">Get CD collection</button>
-    <br /><br />
+    <br><br>
     <table id="demo"></table>
 
     <script>
@@ -159,8 +163,8 @@
     <p>If I were to fully ... flesh... this out I'd probably use a dropdown menu for a filter to allow users to choose the types of media they'd like to see.</p>
 
     <div class="container text-center">
-      <a href="https://roseylikeme.github.io/cats-and-facts/" class="button-link">
-        <button type="button">Demo Page</button>
+      <a href="https://roseylikeme.github.io/cats-and-facts/" target="_blank" class="button button-link">
+        Demo Page
       </a>
     </div>
   </body>
