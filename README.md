@@ -22,4 +22,4 @@ Homework 1: About Me + jQuery Animation • [Link to PR](https://github.com/rose
 
 Homework 2: Take an existing page and make it ...... r e s p o n s i v e 
 
-Homework 3: Bootstrap + Geolocation • Abc Toys • [Link to PR](https://github.com/roseylikeme/cnit133/pull/5) 
+Homework 3: Bootstrap + Geolocation • Abc Toys • [Link to PR](https://github.com/roseylikeme/cnit133/pull/5) <== If you had to pick one, check this out!
